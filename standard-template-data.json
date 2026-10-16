@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.0.0",
-    "generatedAt": "2026-10-16T06:55:38.016711608Z",
+    "version": "1.1.0",
+    "generatedAt": "2026-10-16T07:00:18.555905703Z",
     "templateType": "full_banner_wipe",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -1343,7 +1343,7 @@
                 "description": ""
               },
               "essence": {
-                "title": "",
+                "title": "PINES & SEA",
                 "images": [
                   {
                     "id": "01a1437e-5ee5-727b-9007-3abdc081a714",
@@ -1372,7 +1372,7 @@
                 ],
                 "videos": [ ],
                 "mediaType": "image",
-                "description": ""
+                "description": "창문 틈 사이로 보이는 바다와 따뜻한 빛이 드는 공간에서\n서두르지 않는 하루를 보내세요."
               },
               "gallery": {
                 "title": "",
