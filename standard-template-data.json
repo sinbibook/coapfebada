@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.17.0",
-    "generatedAt": "2026-10-16T08:04:03.727783675Z",
+    "version": "1.18.0",
+    "generatedAt": "2026-10-16T08:07:22.552625237Z",
     "templateType": "full_banner_wipe",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -1436,8 +1436,8 @@
                     "blockId": null
                   },
                   {
-                    "id": "01a14387-d983-7778-9ae9-b6f4f00d9b1a",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_gallery/1792134338635-j6ogn5fwnu.jpg",
+                    "id": "01a143c0-546a-7aa8-8c0a-2cd074204044",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_gallery/1792138040031-q25gk7xzpg.jpg",
                     "sortOrder": 4,
                     "description": "하루 끝, 편안한 힐링",
                     "isSelected": true,
