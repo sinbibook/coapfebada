@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.4.0",
-    "generatedAt": "2026-10-16T07:32:39.931570833Z",
+    "version": "1.5.0",
+    "generatedAt": "2026-10-16T07:33:16.746177481Z",
     "templateType": "full_banner_wipe",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -1567,7 +1567,7 @@
                     }
                   ],
                   "blockId": "13027b7b-3647-4323-af8a-dd6fbf4de20a",
-                  "description": ""
+                  "description": "빛에 따라 달라지는 물빛"
                 },
                 {
                   "title": "Barbecue",
