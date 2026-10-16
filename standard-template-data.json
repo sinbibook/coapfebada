@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.26.0",
-    "generatedAt": "2026-10-16T09:07:17.143897514Z",
+    "version": "1.27.0",
+    "generatedAt": "2026-10-16T09:10:00.709113020Z",
     "templateType": "full_banner_wipe",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -453,8 +453,6 @@
         }
       ],
       "amenities": [
-        "세면도구",
-        "식탁",
         "화재 감지기",
         "일산화탄소 감지기",
         "인덕션",
@@ -468,6 +466,8 @@
         "TV",
         "남녀공용",
         "욕실용품",
+        "세면도구",
+        "식탁",
         "무료 WiFi",
         "소화기",
         "OTT"
@@ -479,9 +479,9 @@
       "status": "active",
       "timeSettings": {
         "timeSettingType": "property",
-        "checkin": "",
-        "checkout": "",
-        "checkinDeadline": ""
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "21:00"
       },
       "roomOptions": {
         "petState": "N",
@@ -662,11 +662,11 @@
     {
       "id": "01a13ed5-aecc-7180-83a0-652295da0847",
       "name": "202호",
-      "description": "원룸형, 침대룸(퀸침대1)+주방1+화장실1\r\n3.63평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
+      "description": "원룸형, 침대룸(퀸침대1)+주방1+화장실1\r\n12평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
       "roomInfo": "",
       "usageGuide": "",
       "group": null,
-      "size": 12,
+      "size": 39.67,
       "baseOccupancy": 2,
       "maxOccupancy": 3,
       "totalRoomCount": {
@@ -696,8 +696,6 @@
         }
       ],
       "amenities": [
-        "세면도구",
-        "TV",
         "금연",
         "식탁",
         "취사시설/도구",
@@ -705,6 +703,8 @@
         "냉장고",
         "전기밥솥",
         "에어컨",
+        "세면도구",
+        "TV",
         "소화기",
         "화재 감지기",
         "인덕션",
@@ -722,9 +722,9 @@
       "status": "active",
       "timeSettings": {
         "timeSettingType": "property",
-        "checkin": "",
-        "checkout": "",
-        "checkinDeadline": ""
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "21:00"
       },
       "roomOptions": {
         "petState": "N",
