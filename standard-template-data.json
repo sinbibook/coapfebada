@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.23.0",
-    "generatedAt": "2026-10-16T08:38:50.593947970Z",
+    "version": "1.24.0",
+    "generatedAt": "2026-10-16T09:00:31.777705864Z",
     "templateType": "full_banner_wipe",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -743,11 +743,11 @@
     {
       "id": "01a13ed5-af0a-7ba3-a39c-9af1f3ba6f88",
       "name": "203호",
-      "description": "원룸형, 침대룸(퀸침대1)+주방1+화장실1\r\n3.63평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
+      "description": "원룸형, 침대룸(퀸침대1)+주방1+화장실1\r\n12평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
       "roomInfo": "",
       "usageGuide": "",
       "group": null,
-      "size": 12,
+      "size": 39.67,
       "baseOccupancy": 2,
       "maxOccupancy": 3,
       "totalRoomCount": {
@@ -777,7 +777,6 @@
         }
       ],
       "amenities": [
-        "세면도구",
         "TV",
         "금연",
         "식탁",
@@ -794,7 +793,8 @@
         "인덕션",
         "전자레인지",
         "헤어드라이어",
-        "OTT"
+        "OTT",
+        "세면도구"
       ],
       "roomViews": [ ],
       "roomStructures": [
@@ -803,9 +803,9 @@
       "status": "active",
       "timeSettings": {
         "timeSettingType": "property",
-        "checkin": "",
-        "checkout": "",
-        "checkinDeadline": ""
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "21:00"
       },
       "roomOptions": {
         "petState": "N",
@@ -824,11 +824,11 @@
     {
       "id": "01a13ed5-afcb-7cf1-a0e1-f9c9ab39acfa",
       "name": "204호",
-      "description": "원룸형, 침대룸(퀸침대1)+주방1+화장실1\r\n3.63평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
+      "description": "원룸형, 침대룸(퀸침대1)+주방1+화장실1\r\n12평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
       "roomInfo": "",
       "usageGuide": "",
       "group": null,
-      "size": 12,
+      "size": 39.67,
       "baseOccupancy": 2,
       "maxOccupancy": 3,
       "totalRoomCount": {
@@ -858,7 +858,6 @@
         }
       ],
       "amenities": [
-        "세면도구",
         "금연",
         "식탁",
         "취사시설/도구",
@@ -875,6 +874,7 @@
         "전자레인지",
         "헤어드라이어",
         "OTT",
+        "세면도구",
         "TV"
       ],
       "roomViews": [ ],
@@ -884,9 +884,9 @@
       "status": "active",
       "timeSettings": {
         "timeSettingType": "property",
-        "checkin": "",
-        "checkout": "",
-        "checkinDeadline": ""
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "21:00"
       },
       "roomOptions": {
         "petState": "N",
@@ -905,11 +905,11 @@
     {
       "id": "01a13ed5-b011-759e-96bc-186a553150d6",
       "name": "301호",
-      "description": "복층형, 침대룸(퀸침대1)+주방1+화장실1\r\n6.05평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
+      "description": "복층형, 침대룸(퀸침대1)+주방1+화장실1\r\n20평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
       "roomInfo": "",
       "usageGuide": "",
       "group": null,
-      "size": 20,
+      "size": 66.12,
       "baseOccupancy": 2,
       "maxOccupancy": 5,
       "totalRoomCount": {
@@ -939,14 +939,10 @@
         }
       ],
       "amenities": [
-        "금연",
-        "식탁",
         "취사시설/도구",
         "무료 WiFi",
         "냉장고",
         "전기밥솥",
-        "에어컨",
-        "남녀공용",
         "욕실용품",
         "소화기",
         "화재 감지기",
@@ -955,6 +951,10 @@
         "전자레인지",
         "헤어드라이어",
         "OTT",
+        "금연",
+        "식탁",
+        "에어컨",
+        "남녀공용",
         "세면도구",
         "TV"
       ],
@@ -965,9 +965,9 @@
       "status": "active",
       "timeSettings": {
         "timeSettingType": "property",
-        "checkin": "",
-        "checkout": "",
-        "checkinDeadline": ""
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "21:00"
       },
       "roomOptions": {
         "petState": "N",
@@ -986,11 +986,11 @@
     {
       "id": "01a13ed5-b052-74e3-9f4f-03ceca22118f",
       "name": "302호",
-      "description": "복층형, 침대룸(퀸침대1)+주방1+화장실1\r\n6.05평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
+      "description": "복층형, 침대룸(퀸침대1)+주방1+화장실1\r\n20평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
       "roomInfo": "",
       "usageGuide": "",
       "group": null,
-      "size": 20,
+      "size": 66.12,
       "baseOccupancy": 2,
       "maxOccupancy": 5,
       "totalRoomCount": {
@@ -1022,7 +1022,6 @@
       "amenities": [
         "세면도구",
         "TV",
-        "식탁",
         "무료 WiFi",
         "냉장고",
         "전기밥솥",
@@ -1036,6 +1035,7 @@
         "전자레인지",
         "헤어드라이어",
         "OTT",
+        "식탁",
         "취사시설/도구",
         "금연"
       ],
@@ -1046,9 +1046,9 @@
       "status": "active",
       "timeSettings": {
         "timeSettingType": "property",
-        "checkin": "",
-        "checkout": "",
-        "checkinDeadline": ""
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "21:00"
       },
       "roomOptions": {
         "petState": "N",
@@ -1067,11 +1067,11 @@
     {
       "id": "01a13f0c-b4f8-7135-9d2d-60c166b1fd58",
       "name": "303호",
-      "description": "복층형, 침대룸(퀸침대1)+주방1+화장실1\r\n6.05평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구,스파/월풀",
+      "description": "복층형, 침대룸(퀸침대1)+주방1+화장실1\r\n20평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구,스파/월풀",
       "roomInfo": "",
       "usageGuide": "",
       "group": null,
-      "size": 20,
+      "size": 66.12,
       "baseOccupancy": 2,
       "maxOccupancy": 4,
       "totalRoomCount": {
@@ -1101,8 +1101,6 @@
         }
       ],
       "amenities": [
-        "금연",
-        "무료 WiFi",
         "냉장고",
         "전기밥솥",
         "에어컨",
@@ -1114,6 +1112,8 @@
         "인덕션",
         "전자레인지",
         "헤어드라이어",
+        "금연",
+        "무료 WiFi",
         "OTT",
         "TV",
         "식탁",
@@ -1128,9 +1128,9 @@
       "status": "active",
       "timeSettings": {
         "timeSettingType": "property",
-        "checkin": "",
-        "checkout": "",
-        "checkinDeadline": ""
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "21:00"
       },
       "roomOptions": {
         "petState": "N",
@@ -1149,11 +1149,11 @@
     {
       "id": "01a13f0c-b5ad-7725-aef7-fda54303daef",
       "name": "304호",
-      "description": "복층형, 침대룸(퀸침대1)+주방1+화장실1\r\n6.05평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
+      "description": "복층형, 침대룸(퀸침대1)+주방1+화장실1\r\n20평\r\nOTT,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,욕실용품,남녀공용,에어컨,전기밥솥,냉장고,와이파이,취사시설/도구,식탁,금연,TV,세면도구",
       "roomInfo": "",
       "usageGuide": "",
       "group": null,
-      "size": 20,
+      "size": 66.12,
       "baseOccupancy": 2,
       "maxOccupancy": 5,
       "totalRoomCount": {
@@ -1183,7 +1183,6 @@
         }
       ],
       "amenities": [
-        "세면도구",
         "TV",
         "금연",
         "식탁",
@@ -1200,7 +1199,8 @@
         "인덕션",
         "전자레인지",
         "헤어드라이어",
-        "OTT"
+        "OTT",
+        "세면도구"
       ],
       "roomViews": [ ],
       "roomStructures": [
@@ -1209,9 +1209,9 @@
       "status": "active",
       "timeSettings": {
         "timeSettingType": "property",
-        "checkin": "",
-        "checkout": "",
-        "checkinDeadline": ""
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "21:00"
       },
       "roomOptions": {
         "petState": "N",
