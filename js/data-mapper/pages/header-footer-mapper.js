@@ -68,37 +68,27 @@ class HeaderFooterMapper extends BaseDataMapper {
     mapHeaderLogo() {
         if (!this.isDataLoaded || !this.data.property) return;
 
+        const property = this.data.property;
+
         // Header 로고 텍스트 매핑 (customFields 우선)
         const propertyNameEn = this.getPropertyNameEn();
         const logoTextElements = this.safeSelectAll('[data-logo-text]');
+        logoTextElements.forEach(logoText => {
+            if (logoText) {
+                logoText.textContent = propertyNameEn;
+            }
+        });
 
         // Header 로고 이미지 매핑 (data-logo 속성 사용)
-        // 로고 이미지가 있으면 이미지를 노출하고 숙소명 텍스트는 숨김, 없으면 텍스트만 노출
         const logoImage = this.safeSelect('[data-logo]');
-        const logoUrl = this._getLogoUrl();
+        if (logoImage) {
+            const logoUrl = this._getLogoUrl();
 
-        if (logoImage && logoUrl) {
-            logoImage.onerror = () => {};
-            logoImage.src = logoUrl;
-            logoImage.alt = this.getPropertyName();
-            logoImage.style.display = '';
-
-            logoTextElements.forEach(logoText => {
-                if (logoText) {
-                    logoText.style.display = 'none';
-                }
-            });
-        } else {
-            if (logoImage) {
-                logoImage.style.display = 'none';
+            if (logoUrl) {
+                logoImage.onerror = () => {};
+                logoImage.src = logoUrl;
+                logoImage.alt = this.getPropertyName();
             }
-
-            logoTextElements.forEach(logoText => {
-                if (logoText) {
-                    logoText.textContent = propertyNameEn;
-                    logoText.style.display = '';
-                }
-            });
         }
     }
 
@@ -108,14 +98,14 @@ class HeaderFooterMapper extends BaseDataMapper {
     mapHeaderNavigation() {
         if (!this.isDataLoaded) return;
 
-        // 메인 메뉴 아이템 클릭 핸들러 설정
-        this.mapMainMenuItems();
-
         // 객실 메뉴 동적 생성
         this.mapRoomMenuItems();
 
         // 시설 메뉴 동적 생성
         this.mapFacilityMenuItems();
+
+        // About 섹션 메뉴 동적 표시 (주변 관광지, 배치도)
+        this.mapAboutMenuItems();
 
         // 예약 버튼에 realtimeBookingId 매핑
         this.mapReservationButtons();
@@ -169,284 +159,146 @@ class HeaderFooterMapper extends BaseDataMapper {
     }
 
     /**
-     * 메인 메뉴 아이템 클릭 핸들러 설정
+     * 객실 메뉴 아이템 동적 생성
+     * rooms[]를 source of truth로 사용하고 getRoomName으로 customFields.roomtypes override 적용
+     * customFields.roomtypes[].groupName이 하나라도 지정되어 있으면 같은 그룹끼리
+     * 하나의 메뉴 항목으로 묶어 표시한다 (getRoomMenuItems 참고).
      */
-    mapMainMenuItems() {
-        // Spaces 메뉴 - 첫 번째 객실로 이동
-        const spacesMenu = document.querySelector('[data-room-link]');
-        if (spacesMenu) {
-            const rooms = this.safeGet(this.data, 'rooms');
-            if (rooms && rooms.length > 0) {
-                spacesMenu.onclick = () => {
-                    window.location.href = `room.html?id=${rooms[0].id}`;
-                };
-            }
-        }
+    mapRoomMenuItems() {
+        const containers = [
+            document.querySelector('[data-rooms-list]'),
+            document.querySelector('[data-rooms-sub]')
+        ].filter(Boolean);
 
-        // Specials 메뉴 - 첫 번째 시설로 이동
-        const specialsMenu = document.querySelector('[data-facility-link]');
-        if (specialsMenu) {
-            const facilities = this.safeGet(this.data, 'property.facilities');
-            if (facilities && facilities.length > 0) {
-                specialsMenu.onclick = () => {
-                    window.location.href = `facility.html?id=${facilities[0].id}`;
-                };
-            }
-        }
+        containers.forEach(container => { container.innerHTML = ''; });
 
-        // About 섹션에 동적 메뉴 추가 (enabled가 true인 페이지만)
-        this.mapAboutMenuItems();
+        const rooms = this.safeGet(this.data, 'rooms');
+        if (!rooms || !Array.isArray(rooms) || rooms.length === 0) return;
+
+        const sortedRooms = [...rooms].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+        const menuItems = this.getRoomMenuItems(sortedRooms);
+
+        containers.forEach(container => {
+            const isFooter = container.closest('.footer') !== null;
+            menuItems.forEach(item => {
+                const label = item.label;
+                if (!String(label || '').trim()) return;
+                const a = document.createElement('a');
+                a.className = isFooter ? 'footer-col-item' : 'reservation';
+                a.textContent = label;
+                a.title = label; // 말줄임(...)으로 잘릴 때 전체 라벨을 hover로 확인
+                a.href = `./room.html?id=${item.room.id}`;
+                container.appendChild(a);
+            });
+        });
+
+        // 모바일 accordion 클론도 동기화 (buildMobileAccordion이 mapper보다 먼저 실행되어 빈 상태로 복제됨)
+        this.syncMobileAccordionClone('[data-rooms-sub]');
     }
 
     /**
-     * About 메뉴에 layout-map, nearby-attractions 동적 추가
+     * 시설 메뉴 아이템 동적 생성
+     */
+    mapFacilityMenuItems() {
+        const containers = [
+            document.querySelector('[data-facilities-list]'),
+            document.querySelector('[data-facilities-sub]')
+        ].filter(Boolean);
+
+        containers.forEach(container => { container.innerHTML = ''; });
+
+        const facilityData = this.safeGet(this.data, 'property.facilities');
+        if (!facilityData || !Array.isArray(facilityData)) return;
+
+        const sortedFacilities = [...facilityData].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+
+        containers.forEach(container => {
+            container.innerHTML = '';
+            const isFooter = container.closest('.footer') !== null;
+            sortedFacilities.forEach(facility => {
+                const a = document.createElement('a');
+                a.className = isFooter ? 'footer-col-item' : 'reservation';
+                a.textContent = this.sanitizeText(facility.name, '시설');
+                a.href = `./facility.html?id=${facility.id}`;
+                container.appendChild(a);
+            });
+        });
+
+        // 모바일 accordion 클론도 동기화
+        this.syncMobileAccordionClone('[data-facilities-sub]');
+    }
+
+    syncMobileAccordionClone(selector) {
+        const all = document.querySelectorAll(selector);
+        if (all.length < 2) return;
+        const original = all[0];
+        for (let i = 1; i < all.length; i++) {
+            all[i].innerHTML = original.innerHTML;
+        }
+    }
+
+    /**
+     * About 섹션 메뉴 아이템 동적 표시 (주변 관광지, 배치도)
+     * enabled: true일 때만 메뉴에 표시
      */
     mapAboutMenuItems() {
-        // About 메뉴 찾기 (첫 번째 dropdown-section)
-        const dropdownSections = document.querySelectorAll('.dropdown-section');
-        let aboutMenuList = null;
+        if (!this.isDataLoaded) return;
 
-        for (const section of dropdownSections) {
-            const title = section.querySelector('.dropdown-section-title');
-            if (title && title.textContent.includes('About')) {
-                aboutMenuList = section.querySelector('.dropdown-section-list');
-                break;
-            }
-        }
-
-        if (!aboutMenuList) return;
-
-        const customPages = [
+        const pages = [
             {
-                name: '주변 관광지',
-                id: 'nearby-attractions',
-                path: 'nearby-attractions.html',
+                key: 'nearbyAttractions',
+                className: 'nearby-attractions-menu',
+                label: '주변 관광지',
+                href: './nearby-attractions.html',
                 enabled: this.safeGet(this.data, 'homepage.customFields.pages.nearbyAttractions.sections.0.enabled')
             },
             {
-                name: '숙소 배치도',
-                id: 'layout-map',
-                path: 'layout-map.html',
+                key: 'layoutMap',
+                className: 'layout-map-menu',
+                label: '숙소 배치도',
+                href: './layout-map.html',
                 enabled: this.safeGet(this.data, 'homepage.customFields.pages.layoutMap.sections.0.enabled')
             }
         ];
 
-        // enabled가 true인 페이지만 메뉴에 추가
-        customPages.forEach(page => {
-            if (page.enabled) {
-                const existingItem = aboutMenuList.querySelector(`[data-menu-id="${page.id}"]`);
-                if (!existingItem) {
-                    const li = document.createElement('li');
-                    li.setAttribute('data-menu-id', page.id);
-                    li.innerHTML = `<a onclick="navigateTo('${page.id}')">${page.name}</a>`;
-                    aboutMenuList.appendChild(li);
+        // 헤더 .prologue 컨테이너들 (원본 + 모바일 클론 모두)
+        const headerPrologues = document.querySelectorAll('.navigation .prologue');
+        // 푸터 .footer-col (Prologue 탭)
+        const footerCols = document.querySelectorAll('.footer .footer-nav-tab:first-child .footer-col');
+
+        pages.forEach(({ className, label, href, enabled }) => {
+            // 헤더
+            headerPrologues.forEach(prologue => {
+                const existing = prologue.querySelector(`.${className}`);
+                if (enabled === true) {
+                    if (!existing) {
+                        const a = document.createElement('a');
+                        a.className = `reservation ${className}`;
+                        a.href = href;
+                        a.innerHTML = `<div class="div2">${label}</div>`;
+                        prologue.appendChild(a);
+                    }
+                } else {
+                    if (existing) existing.remove();
                 }
-            }
-        });
-    }
+            });
 
-    /**
-     * 헬퍼 메서드: 메뉴 아이템들을 동적으로 생성
-     * @param {Array} items - 메뉴 아이템 데이터 배열
-     * @param {string} classPrefix - CSS 클래스 접두사 (sub-spaces-, sub-specials- 등)
-     * @param {string} mobileContainerId - 모바일 메뉴 컨테이너 ID
-     * @param {string} urlTemplate - URL 템플릿 (room.html, facility.html 등)
-     * @param {string} defaultNamePrefix - 기본 이름 접두사 (객실, 시설 등)
-     * @param {number} maxItems - 최대 표시할 아이템 수 (기본: 무제한)
-     * @param {Function} customClickHandler - 커스텀 클릭 핸들러 (선택사항)
-     */
-    _createMenuItems(items, classPrefix, mobileContainerId, urlTemplate, defaultNamePrefix, maxItems = null, customClickHandler = null) {
-        if (!items || !Array.isArray(items)) return;
-
-        // Desktop 서브메뉴 업데이트
-        const desktopMenu = document.querySelector('.sub-menus');
-        if (desktopMenu) {
-            // 기존 메뉴 아이템들 제거
-            const existingItems = desktopMenu.querySelectorAll(`[class*="${classPrefix}"]`);
-            existingItems.forEach(item => item.remove());
-
-            // 메뉴 카테고리별 left 위치 정의
-            const leftPositions = {
-                'sub-about-': 15,
-                'sub-spaces-': 121,
-                'sub-specials-': 228,
-                'sub-reservation-': 332
-            };
-
-            // 현재 카테고리의 left 위치 가져오기
-            const leftPosition = leftPositions[classPrefix] || 0;
-
-            // 새로운 메뉴 아이템들 생성
-            const displayItems = maxItems ? items.slice(0, maxItems) : items;
-            displayItems.forEach((item, index) => {
-                const menuItem = document.createElement('div');
-                menuItem.className = `sub-menu-item ${classPrefix}${index + 1}`;
-                menuItem.textContent = item.name || `${defaultNamePrefix}${index + 1}`;
-
-                // 동적으로 위치 계산 (첫 번째: 29px, 그 다음부터 34px씩 증가)
-                const topPosition = 29 + (index * 34);
-                menuItem.style.cssText = `left: ${leftPosition}px; top: ${topPosition}px;`;
-
-                // 클릭 이벤트 추가
-                menuItem.addEventListener('click', () => {
-                    if (customClickHandler) {
-                        customClickHandler(item.id);
-                    } else {
-                        window.location.href = `${urlTemplate}?id=${item.id}`;
+            // 푸터
+            footerCols.forEach(col => {
+                const existing = col.querySelector(`.${className}`);
+                if (enabled === true) {
+                    if (!existing) {
+                        const a = document.createElement('a');
+                        a.className = `footer-col-item ${className}`;
+                        a.href = href;
+                        a.textContent = label;
+                        col.appendChild(a);
                     }
-                });
-
-                desktopMenu.appendChild(menuItem);
+                } else {
+                    if (existing) existing.remove();
+                }
             });
-
-            // 서브메뉴 컨테이너 높이 동적 조정
-            // 가장 많은 메뉴를 가진 카테고리 기준으로 높이 계산
-            const allSubMenuItems = desktopMenu.querySelectorAll('.sub-menu-item');
-            if (allSubMenuItems.length > 0) {
-                // 각 메뉴 아이템 중 가장 아래에 있는 항목의 bottom 위치 계산
-                let maxBottom = 0;
-                allSubMenuItems.forEach(item => {
-                    // inline style과 CSS로 정의된 top 값 모두 읽기
-                    const computedTop = window.getComputedStyle(item).top;
-                    const top = parseInt(computedTop) || parseInt(item.style.top) || 0;
-                    const itemHeight = 34; // 각 메뉴 아이템 높이 (padding 포함)
-                    const bottom = top + itemHeight;
-                    if (bottom > maxBottom) {
-                        maxBottom = bottom;
-                    }
-                });
-
-                // 여유 공간 추가 (상단 9px + 하단 여유)
-                const containerHeight = maxBottom + 10;
-                desktopMenu.style.height = `${containerHeight}px`;
-            }
-        }
-
-        // Mobile 서브메뉴 업데이트
-        const mobileContainer = document.getElementById(mobileContainerId);
-        if (mobileContainer) {
-            mobileContainer.innerHTML = '';
-
-            items.forEach((item, index) => {
-                const menuButton = document.createElement('button');
-                menuButton.className = 'mobile-sub-item';
-                menuButton.textContent = item.name || `${defaultNamePrefix}${index + 1}`;
-
-                // 클릭 이벤트 추가
-                menuButton.addEventListener('click', () => {
-                    if (customClickHandler) {
-                        customClickHandler(item.id);
-                    } else {
-                        window.location.href = `${urlTemplate}?id=${item.id}`;
-                    }
-                });
-
-                mobileContainer.appendChild(menuButton);
-            });
-        }
-    }
-
-    /**
-     * 객실 메뉴 아이템 동적 생성 (Side Header용)
-     */
-    mapRoomMenuItems() {
-        const roomData = this.safeGet(this.data, 'rooms');
-        if (!roomData || !Array.isArray(roomData)) {
-            return;
-        }
-
-        // displayOrder로 정렬
-        const sortedRooms = [...roomData].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
-
-        // 객실 리스트 컨테이너 찾기
-        const roomsList = this.safeSelect('[data-rooms-list]');
-        if (!roomsList) {
-            return;
-        }
-
-        // 기존 내용 초기화
-        roomsList.innerHTML = '';
-
-        // 각 객실 아이템 생성
-        sortedRooms.forEach((room) => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-
-            a.textContent = this.getRoomName(room);
-            a.style.cursor = 'pointer';
-
-            // 클릭 이벤트 추가
-            a.addEventListener('click', () => {
-                window.location.href = `room.html?id=${room.id}`;
-            });
-
-            li.appendChild(a);
-            roomsList.appendChild(li);
         });
-
-    }
-
-    /**
-     * 시설 메뉴 아이템 동적 생성 (Side Header용)
-     */
-    mapFacilityMenuItems() {
-        const facilityData = this.safeGet(this.data, 'property.facilities');
-        if (!facilityData || !Array.isArray(facilityData)) {
-            return;
-        }
-
-        // displayOrder로 정렬
-        const sortedFacilities = [...facilityData].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
-
-        // 편의시설 리스트 컨테이너 찾기
-        const facilitiesList = this.safeSelect('[data-facilities-list]');
-        if (!facilitiesList) {
-            return;
-        }
-
-        // 기존 내용 초기화
-        facilitiesList.innerHTML = '';
-
-        // 각 편의시설 아이템 생성
-        sortedFacilities.forEach((facility) => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-
-            a.textContent = this.sanitizeText(facility.name, '편의시설');
-            a.style.cursor = 'pointer';
-
-            // 클릭 이벤트 추가
-            a.addEventListener('click', () => {
-                window.location.href = `facility.html?id=${facility.id}`;
-            });
-
-            li.appendChild(a);
-            facilitiesList.appendChild(li);
-        });
-
-    }
-
-    /**
-     * Side Header 이미지 배너 매핑
-     * customFields.property.images (category: property_thumbnail) 중 첫 번째 이미지 사용
-     */
-    mapSideImageBanner() {
-        if (!this.isDataLoaded) return;
-
-        const banner = this.safeSelect('[data-side-banner-img]');
-        if (!banner) return;
-
-        // customFields에서 property_thumbnail 카테고리 이미지 가져오기
-        const thumbnailImages = this.getPropertyImages('property_thumbnail');
-        const selectedThumbnail = thumbnailImages[0];
-
-        if (!selectedThumbnail || !selectedThumbnail.url) return;
-
-        // 배경 이미지 설정
-        banner.style.backgroundImage = `url('${selectedThumbnail.url}')`;
-        banner.style.backgroundSize = 'cover';
-        banner.style.backgroundPosition = 'center';
-        banner.style.backgroundRepeat = 'no-repeat';
     }
 
     // ============================================================================
@@ -460,29 +312,21 @@ class HeaderFooterMapper extends BaseDataMapper {
         if (!this.isDataLoaded || !this.data.property) return;
 
         // Footer 로고 이미지 매핑 (data-footer-logo 속성 사용)
-        // 로고 이미지가 있으면 이미지를 노출하고 숙소명 텍스트는 숨김, 없으면 텍스트만 노출
         const footerLogoImage = this.safeSelect('[data-footer-logo]');
+        if (footerLogoImage) {
+            const logoUrl = this._getLogoUrl();
+
+            if (logoUrl) {
+                footerLogoImage.onerror = () => {};
+                footerLogoImage.src = logoUrl;
+                footerLogoImage.alt = this.getPropertyName();
+            }
+        }
+
+        // Footer 로고 텍스트 매핑 (customFields 우선)
         const footerLogoText = this.safeSelect('[data-footer-logo-text]');
-        const logoUrl = this._getLogoUrl();
-
-        if (footerLogoImage && logoUrl) {
-            footerLogoImage.onerror = () => {};
-            footerLogoImage.src = logoUrl;
-            footerLogoImage.alt = this.getPropertyName();
-            footerLogoImage.style.display = '';
-
-            if (footerLogoText) {
-                footerLogoText.style.display = 'none';
-            }
-        } else {
-            if (footerLogoImage) {
-                footerLogoImage.style.display = 'none';
-            }
-
-            if (footerLogoText) {
-                footerLogoText.textContent = this.getPropertyNameEn();
-                footerLogoText.style.display = '';
-            }
+        if (footerLogoText) {
+            footerLogoText.textContent = this.getPropertyNameEn();
         }
     }
 
@@ -566,6 +410,30 @@ class HeaderFooterMapper extends BaseDataMapper {
     }
 
     /**
+     * Footer 농어촌민박사업자 이미지 매핑
+     * homepage.customFields.footer.ruralStayMark → [data-footer-rural-stay-mark]
+     * url 이 있을 때만 노출하고, 없으면 숨겨 기존 푸터와 같다.
+     * 프리뷰는 같은 페이지에서 다시 매핑하므로 매번 표시 상태를 되돌린다.
+     */
+    mapFooterRuralStayMark() {
+        const mark = this.safeGet(this.data, 'homepage.customFields.footer.ruralStayMark');
+        const markUrl = mark && mark.url ? String(mark.url) : '';
+        const alt = (mark && mark.description && String(mark.description).trim()) || '농어촌민박사업자';
+
+        document.querySelectorAll('[data-footer-rural-stay-mark-wrap]').forEach(wrap => {
+            wrap.style.display = markUrl ? '' : 'none';
+        });
+        document.querySelectorAll('[data-footer-rural-stay-mark]').forEach(img => {
+            if (!markUrl) {
+                img.removeAttribute('src');
+                return;
+            }
+            img.src = markUrl;
+            img.alt = alt;
+        });
+    }
+
+    /**
      * Footer 소셜 링크 매핑
      * socialLinks가 빈 객체면 전체 섹션 숨김
      * 값이 있는 링크만 표시
@@ -616,6 +484,95 @@ class HeaderFooterMapper extends BaseDataMapper {
     // 🔄 TEMPLATE METHODS IMPLEMENTATION
     // ============================================================================
 
+    // ============================================================================
+    // 🖼️ NAVIGATION PANEL IMAGE
+    // ============================================================================
+
+    /**
+     * 현재 페이지 키 반환 (homepage.customFields.pages.* 키와 동일)
+     */
+    _getCurrentPageKey() {
+        const path = window.location.pathname;
+
+        if (path.endsWith('/main.html')) return 'main';
+        if (path.endsWith('/room.html')) return 'room';
+        if (path.endsWith('/facility.html')) return 'facility';
+        if (path.endsWith('/reservation.html')) return 'reservation';
+        if (path.endsWith('/directions.html')) return 'directions';
+        if (path.endsWith('/nearby-attractions.html')) return 'nearbyAttractions';
+        if (path.endsWith('/layout-map.html')) return 'layoutMap';
+
+        return 'index';
+    }
+
+    /**
+     * 선택된 이미지 배열 반환 (sortOrder 정렬)
+     */
+    _getSelectedImages(images) {
+        if (window.ImageHelpers?.getSelectedImages) {
+            return ImageHelpers.getSelectedImages(images || []);
+        }
+        return (images || [])
+            .filter(img => img && img.isSelected !== false && img.url)
+            .sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0));
+    }
+
+    /**
+     * 현재 페이지 Hero 영역의 첫 번째 이미지 URL 반환
+     * - room / facility: URL의 id 파라미터 기준 (없으면 첫 번째 항목)
+     * - 그 외: homepage.customFields.pages.{page}.sections.0.hero.images
+     */
+    _getPageHeroImageUrl() {
+        const page = this._getCurrentPageKey();
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // 객실 페이지: 각 객실의 roomtype_interior 첫 번째 이미지 (room hero와 동일 소스)
+        if (page === 'room') {
+            const rooms = this.data?.rooms || [];
+            if (rooms.length === 0) return null;
+
+            const roomId = urlParams.get('id');
+            const room = roomId ? rooms.find(r => String(r.id) === String(roomId)) : rooms[0];
+            if (!room) return null;
+
+            return this.getRoomImages(room, 'roomtype_interior')[0]?.url || null;
+        }
+
+        // 부대시설 페이지: 각 시설의 첫 번째 이미지 (facility hero와 동일 소스)
+        if (page === 'facility') {
+            const facilities = this.data?.property?.facilities || [];
+            if (facilities.length === 0) return null;
+
+            const facilityId = urlParams.get('id');
+            const facility = facilityId
+                ? facilities.find(f => String(f.id) === String(facilityId))
+                : [...facilities].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0))[0];
+            if (!facility) return null;
+
+            return this._getSelectedImages(facility.images)[0]?.url || null;
+        }
+
+        const hero = this.safeGet(this.data, `homepage.customFields.pages.${page}.sections.0.hero`);
+        return this._getSelectedImages(hero?.images)[0]?.url || null;
+    }
+
+    /**
+     * 메뉴 패널 배경 이미지 매핑 ([data-nav-image])
+     * 현재 페이지 Hero 영역의 첫 번째 이미지를 사용
+     */
+    mapNavigationImage() {
+        const navImage = this.safeSelect('[data-nav-image]');
+        if (!navImage) return;
+
+        const url = this._getPageHeroImageUrl();
+        const fallback = window.ImageHelpers?.EMPTY_IMAGE_WITH_ICON || '';
+
+        navImage.onerror = () => {};
+        navImage.src = url || fallback;
+        navImage.alt = url ? this.getPropertyName() : '';
+        navImage.classList.toggle('empty-image-placeholder', !url);
+    }
+
     /**
      * Header 전체 매핑 실행
      */
@@ -630,9 +587,8 @@ class HeaderFooterMapper extends BaseDataMapper {
         // Header 매핑
         this.mapHeaderLogo();
         this.mapHeaderNavigation();
+        this.mapNavigationImage();
 
-        // Side Header 이미지 배너 매핑
-        this.mapSideImageBanner();
     }
 
     /**
@@ -646,10 +602,9 @@ class HeaderFooterMapper extends BaseDataMapper {
         // Footer 매핑
         this.mapFooterLogo();
         this.mapFooterInfo();
+        this.mapFooterRuralStayMark();
         this.mapSocialLinks();
 
-        // E-commerce registration 매핑
-        this.mapEcommerceRegistration();
     }
 
     /**
