@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.48.0",
-    "generatedAt": "2026-10-20T05:28:05.615597864Z",
+    "version": "1.49.0",
+    "generatedAt": "2026-10-20T05:29:07.109140433Z",
     "templateType": "fullpage_mood",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -1393,7 +1393,7 @@
                 "description": " "
               },
               "essence": {
-                "title": "PINES & SEA",
+                "title": "눈 앞에 펼쳐지는 청량한 바다와 따뜻한 빛이 드는 공간에서 서두르지 않는 하루를 보내세요.",
                 "images": [
                   {
                     "id": "01a15250-17ae-7a3e-927b-2da352c1b1c9",
@@ -1422,7 +1422,7 @@
                 ],
                 "videos": [ ],
                 "mediaType": "image",
-                "description": "눈 앞에 펼쳐지는 청량한 바다와 따뜻한 빛이 드는 공간에서\n서두르지 않는 하루를 보내세요."
+                "description": "PINES & SEA"
               },
               "gallery": {
                 "title": "Coaffebada Place",
