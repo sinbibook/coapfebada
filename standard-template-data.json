@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.52.0",
-    "generatedAt": "2026-10-20T05:32:30.754654647Z",
+    "version": "1.53.0",
+    "generatedAt": "2026-10-20T05:34:14.509493656Z",
     "templateType": "fullpage_mood",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -1663,8 +1663,8 @@
                 "title": "",
                 "images": [
                   {
-                    "id": "01a1527b-e87e-7660-9ac5-b992849f40fc",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/reservation_hero/1792385214261-27rqvnqcjm.jpg",
+                    "id": "01a157cd-90b2-76d5-b1bb-18abc8e9e27e",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/reservation_hero/1792474451142-d99qv5f39i.jpg",
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true,
@@ -1674,7 +1674,32 @@
               },
               "about": {
                 "title": "",
-                "images": [ ],
+                "images": [
+                  {
+                    "id": "01a157cd-9441-7d45-bce6-1c2ba6686d3d",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/reservation_about/1792474451133-c9fjalf3lu.jpg",
+                    "sortOrder": 0,
+                    "description": "",
+                    "isSelected": true,
+                    "blockId": null
+                  },
+                  {
+                    "id": "01a157cd-8dbe-7af9-8d3f-57edf964d4af",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/reservation_about/1792474451140-6u6w7dllct.jpg",
+                    "sortOrder": 1,
+                    "description": "",
+                    "isSelected": true,
+                    "blockId": null
+                  },
+                  {
+                    "id": "01a157cd-92e9-7ee3-9ae5-2e3eb06dadbb",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/reservation_about/1792474451141-7i2gslpant.jpg",
+                    "sortOrder": 2,
+                    "description": "",
+                    "isSelected": true,
+                    "blockId": null
+                  }
+                ],
                 "description": "  "
               }
             }
