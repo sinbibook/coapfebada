@@ -1,149 +1,158 @@
-/**
- * Nearby Attractions Page JavaScript
- */
-
+// Nearby Attractions Page - Hero Slider + Attractions Auto Slider
 (function() {
     'use strict';
 
-    let currentSlideIndex = 0;
-    let autoSlideInterval;
-    let totalSlides = 0;
-    const SLIDE_INTERVAL = 6000; // 6초
+    // Hero Slider 초기화 (directions.js 패턴 적용)
+    window.initNearbyAttractionsHeroSlider = function() {
+        var con2 = document.querySelector('.nearby-attractions-page .con-2');
+        if (!con2) return;
 
-    /**
-     * 스크롤 애니메이션 설정
-     */
-    function setupScrollAnimations() {
-        const animateElements = document.querySelectorAll('.animate-element');
+        var slides = con2.querySelectorAll('.bg-slide');
+        if (slides.length === 0) return;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        var currentEl = con2.querySelector('.arrow-num-current');
+        var totalEl = con2.querySelector('.arrow-num-total');
+        var prevBtn = con2.querySelector('.arrow-prev');
+        var nextBtn = con2.querySelector('.arrow-next');
+
+        var current = 0;
+        var total = slides.length;
+        var AUTO_INTERVAL = 5000;
+        var autoTimer = null;
+
+        function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+        function render() {
+            slides.forEach(function(s, i) {
+                s.classList.toggle('is-active', i === current);
+            });
+            if (currentEl) currentEl.textContent = pad(current + 1);
+            if (totalEl) totalEl.textContent = pad(total);
+        }
+
+        function goTo(idx) {
+            current = ((idx % total) + total) % total;
+            render();
+        }
+
+        function startAuto() {
+            stopAuto();
+            if (total <= 1) return;
+            autoTimer = setInterval(function() {
+                goTo(current + 1);
+            }, AUTO_INTERVAL);
+        }
+
+        function stopAuto() {
+            if (autoTimer) {
+                clearInterval(autoTimer);
+                autoTimer = null;
+            }
+        }
+
+        function bindArrow(el, delta) {
+            if (!el) return;
+            el.style.cursor = 'pointer';
+            el.addEventListener('click', function() {
+                goTo(current + delta);
+                startAuto();
+            });
+            el.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    goTo(current + delta);
+                    startAuto();
                 }
             });
-        }, { threshold: 0.1 });
+        }
 
-        animateElements.forEach(element => {
-            observer.observe(element);
-        });
-    }
+        bindArrow(prevBtn, -1);
+        bindArrow(nextBtn, 1);
 
-    /**
-     * 페이지 초기화
-     */
-    function initPage() {
-        setupScrollAnimations();
+        // Hide arrows if only one slide
+        if (total === 1) {
+            var arrowContainer = con2.querySelector('.arrow-container');
+            if (arrowContainer) arrowContainer.style.display = 'none';
+        }
 
-        // mapPage() 완료 후 슬라이더 초기화를 위해 전역 함수 노출
-        // (preview-handler에서 mapPage() 후 호출)
-        window._initNearbyAttractionsSlider = () => {
-            initSlider();
-            startAutoSlide();
-        };
-    }
+        render();
+        startAuto();
+    };
 
-    /**
-     * 버튼 이벤트 바인딩
-     */
-    function bindSliderButtons() {
-        const prevBtns = document.querySelectorAll('.attractions-prev');
-        const nextBtns = document.querySelectorAll('.attractions-next');
+    // Attractions Auto Slider 초기화 (썸네일 자동 순회)
+    window.initAttractionsSlider = function() {
+        var container = document.querySelector('[data-nearby-attractions-list]');
+        var thumbs = document.querySelectorAll('.nearby-attractions-thumb-wrap');
 
-        prevBtns.forEach(btn => {
-            // 기존 리스너 제거
-            btn.replaceWith(btn.cloneNode(true));
-        });
-        nextBtns.forEach(btn => {
-            // 기존 리스너 제거
-            btn.replaceWith(btn.cloneNode(true));
-        });
+        if (!container || thumbs.length === 0) return;
 
-        // 다시 선택
-        const newPrevBtns = document.querySelectorAll('.attractions-prev');
-        const newNextBtns = document.querySelectorAll('.attractions-next');
+        var current = 0;
+        var total = thumbs.length;
+        var AUTO_INTERVAL = 4000;  // 4초
+        var autoTimer = null;
 
-        newPrevBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                changeSlide(-1);
-                resetAutoSlide();
+        function goTo(index) {
+            current = (index % total + total) % total;
+
+            // 모든 썸네일에서 active 제거
+            thumbs.forEach(function(thumb) {
+                thumb.classList.remove('is-active');
+            });
+
+            // 현재 썸네일에 active 추가
+            thumbs[current].classList.add('is-active');
+
+            // 해당 썸네일의 클릭 이벤트 트리거
+            thumbs[current].click();
+        }
+
+        function startAuto() {
+            stopAuto();
+            if (total <= 1) return;
+            autoTimer = setInterval(function() {
+                goTo(current + 1);
+            }, AUTO_INTERVAL);
+        }
+
+        function stopAuto() {
+            if (autoTimer) {
+                clearInterval(autoTimer);
+                autoTimer = null;
+            }
+        }
+
+        // 썸네일 클릭 시 자동 슬라이드 재시작
+        thumbs.forEach(function(thumb) {
+            thumb.addEventListener('click', function() {
+                startAuto();
             });
         });
 
-        newNextBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                changeSlide(1);
-                resetAutoSlide();
-            });
-        });
-    }
+        // 자동 슬라이더 시작
+        startAuto();
 
-    /**
-     * 슬라이더 초기화
-     */
-    function initSlider() {
-        // 모든 슬라이드 다시 조회 (동적 생성 후)
-        const allSlides = document.querySelectorAll('.attractions-slide');
-        totalSlides = allSlides.length;
-        currentSlideIndex = 0;
+        // 전역 함수 노출
+        window.attractionSliderNext = function() { goTo(current + 1); };
+        window.attractionSliderPrev = function() { goTo(current - 1); };
+        window.goToAttraction = goTo;
+    };
 
-        // 각 슬라이드에 번호 추가 (01, 02, 03, ...)
-        allSlides.forEach((slide, index) => {
-            const titleEl = slide.querySelector('.attraction-item-title');
-            if (titleEl) {
-                titleEl.setAttribute('data-number', String(index + 1).padStart(2, '0'));
-            }
-            // 첫 슬라이드만 active
-            if (index === 0) {
-                slide.classList.add('active');
-            } else {
-                slide.classList.remove('active');
-            }
-        });
-
-        // 버튼 바인딩
-        bindSliderButtons();
-    }
-
-    /**
-     * 슬라이드 변경
-     */
-    function changeSlide(direction) {
-        const currentSlides = document.querySelectorAll('.attractions-slide');
-        if (currentSlides.length === 0) return;
-
-        totalSlides = currentSlides.length;
-        // 인덱스 업데이트
-        currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
-
-        // 모든 슬라이드의 active 클래스 제거
-        currentSlides.forEach(slide => slide.classList.remove('active'));
-
-        // 새로운 슬라이드에 active 클래스 추가
-        currentSlides[currentSlideIndex].classList.add('active');
-    }
-
-    /**
-     * 자동 슬라이더 시작
-     */
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(() => {
-            changeSlide(1);
-        }, SLIDE_INTERVAL);
-    }
-
-    /**
-     * 자동 슬라이더 리셋
-     */
-    function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-    }
-
-    // 페이지 로드 시 초기화
+    // Auto initialize when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initPage);
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.initNearbyAttractionsHeroSlider === 'function') {
+                window.initNearbyAttractionsHeroSlider();
+            }
+            if (typeof window.initAttractionsSlider === 'function') {
+                window.initAttractionsSlider();
+            }
+        });
     } else {
-        initPage();
+        if (typeof window.initNearbyAttractionsHeroSlider === 'function') {
+            window.initNearbyAttractionsHeroSlider();
+        }
+        if (typeof window.initAttractionsSlider === 'function') {
+            window.initAttractionsSlider();
+        }
     }
 })();

@@ -1,1566 +1,754 @@
-/* Room Page Specific Styles */
+/* ===========================
+   Room Page Styles (Figma export 기반)
+   - 헤더/푸터/Hero는 공통(header.css/footer.css/directions.css 사용)
+   - 본 파일은 room 페이지 전용 컨텐츠(.frame-main 이하)만 담당
+   - 모든 셀렉터를 .room-page 부모로 스코프해 다른 페이지와 충돌 방지
+   =========================== */
 
-/* Main Content */
-.main-content {
-    min-height: 100vh;
+/* ===========================
+   ROOM 페이지 hero address-container: "Room" 타이틀 가운데 정렬 (모든 viewport)
+   directions.css의 좌측 정렬 기본값 덮어쓰기
+   =========================== */
+.room-page .address-container-parent {
+  align-items: center !important;
+}
+.room-page .address-container {
+  align-items: center !important;
+}
+.room-page .direction-info {
+  justify-content: center !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+.room-page .direction2 {
+  text-align: center !important;
 }
 
-/* ========================================
-   ROOM HERO SLIDER SECTION
-   ======================================== */
-.room-hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(180deg, var(--color-secondary, #658399) 0%, var(--color-primary, #e6f3ff) 100%); /* 그라데이션 여기에만 적용 */
-    padding-top: 80px;
+/* ===========================
+   ROOM GROUP TABS (같은 groupName으로 묶인 객실 간 전환)
+   - 현재 객실이 속한 그룹의 멤버가 2개 이상일 때만 노출 (mapper가 그 외엔 display:none)
+   =========================== */
+.room-page .room-group-tabs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(20px, 3vw, 48px);
+  padding: 28px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
-/* Room Name Section */
-.room-name-section {
-    position: relative;
-    padding: 60px 0 40px;
-    text-align: center;
-    background: var(--color-primary, #e6f3ff); /* 그라데이션 끝 색상으로 연결 */
-    display: none; /* 데스크탑에서는 숨김 (오버레이 사용) */
+.room-page .room-group-tab {
+  position: relative;
+  font-family: var(--font-ko-main);
+  font-size: clamp(14px, 1.1vw, 17px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  color: rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+  padding-bottom: 8px;
+  transition: color 0.25s var(--ease-elegant);
+  white-space: nowrap;
 }
-
-/* Hero Slider Container */
-.room-hero-slider {
-    position: relative;
-    width: 100%;
-    height: 100%; /* 섹션 높이 전체 사용 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.room-page .room-group-tab:hover {
+  color: var(--Black);
 }
-
-/* Room Name Overlay - 슬라이더 중앙에 표시 */
-.room-name-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    text-align: center;
-    pointer-events: none; /* 클릭 이벤트 통과 */
+.room-page .room-group-tab.is-active {
+  color: var(--Black);
 }
-
-.room-title-overlay {
-    font-size: 42px;
-    font-weight: bold;
-    color: white;
-    margin: 0;
-    text-align: center;
-    letter-spacing: 1px;
-    text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.2),
-        0 4px 8px rgba(0, 0, 0, 0.15);
+.room-page .room-group-tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--Black);
 }
-
-/* 모바일에서 오버레이 숨기기 */
-@media (max-width: 768px) {
-    .room-name-overlay {
-        display: none;
-    }
-
-    /* 모바일에서 room-name-section 보이기 */
-    .room-name-section {
-        display: block;
-        background: var(--color-primary, #e6f3ff);
-    }
-
-    .room-name-section .room-title {
-        color: var(--color-secondary, #658399); /* 파란색으로 표시 */
-    }
-
-    /* 모바일에서 circular 텍스트도 파란색 */
-    .room-name-section .room-hero-circular-text text {
-        fill: var(--color-secondary, #658399);
-    }
-}
-
-.room-slider-container {
-    position: relative;
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    touch-action: pan-y pinch-zoom; /* 수직 스크롤만 허용, 수평은 JS가 처리 */
-}
-
-/* Hero Text Container */
-.room-hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media screen and (max-width: 600px) {
+  .room-page .room-group-tabs {
     gap: 20px;
-    text-align: center;
-    z-index: 4;
-    position: relative;
+    padding: 20px 20px;
+  }
 }
 
-/* Room Hero Title (ROOM 01) */
-.room-hero-title {
-    
-    font-size: 48px;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin: 0;
-    text-align: center;
+/* ===========================
+   ROOM INFO 섹션 (Figma .img2-parent 재구성)
+   - 상단: "Room info" + 402(...) 서브타이틀
+   - 중앙: 대표 이미지 1장
+   - 하단: 4개 썸네일
+   - 최하단: 객실명 (가운데 정렬)
+   =========================== */
+.room-page .room-info-section {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px clamp(20px, 5vw, 100px);
+  box-sizing: border-box;
+  gap: 40px;
+  background-color: var(--color-whitesmoke);
+}
+.room-page .room-info-header {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding-left: clamp(0px, 4vw, 80px);
+}
+.room-page .room-info-title {
+  margin: 0;
+  font-size: clamp(36px, 4vw, 56px);
+  font-family: var(--font-italiana);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 120%;
+  color: var(--Black);
+}
+.room-page .room-info-sub {
+  margin: 0;
+  font-size: clamp(14px, 1.2vw, 20px);
+  font-family: var(--font-ko-main);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  color: var(--Black);
+}
+.room-page .room-info-feature {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  aspect-ratio: 1400 / 800;
+  overflow: hidden;       /* feature img scale 시 가장자리(검정라인) 잘려서 가려지도록 */
+  position: relative;
+}
+.room-page .room-info-feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.05);  /* 5% 확대 → 이미지 가장자리 검정라인 가림 */
+  transform-origin: center;
+  transition: opacity 0.4s var(--ease-elegant) !important;
+}
+.room-page .room-info-feature-img.is-fading {
+  opacity: 0.3;
+}
+.room-page .room-info-thumbs {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  flex-wrap: wrap;
+}
+/* 썸네일 래퍼: overflow hidden으로 자르고, 안쪽 img를 scale로 살짝 확대해
+   이미지 자체에 박혀있는 검정 라인(테두리/장식) 가려짐 */
+.room-page .room-info-thumb-wrap {
+  width: 342px;
+  max-width: calc((100% - 33px) / 4);
+  height: auto;
+  aspect-ratio: 342 / 195;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+/* ::after 가상요소로 1px 검정 라인을 그림
+   transform: scale 적용된 img가 stacking context를 만들어 box-shadow를 덮으므로
+   ::after에 z-index를 줘서 위에 그려지도록 함 */
+.room-page .room-info-thumb-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color 0.25s var(--ease-elegant) !important;
+  box-sizing: border-box;
+}
+.room-page .room-info-thumb-wrap.is-active::after {
+  border-color: #000;
 }
 
-/* Room Name Wrapper - for circular text overlay */
-.room-name-wrapper {
-    position: relative;
-    display: inline-block;
-    margin: 0 auto;
+.room-page .room-info-thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.08);          /* 살짝 확대해 이미지 가장자리(검정라인 등)를 가림 */
+  transform-origin: center;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.25s var(--ease-elegant), transform 0.3s var(--ease-elegant) !important;
+}
+.room-page .room-info-thumb-wrap:hover .room-info-thumb {
+  transform: scale(1.12);
+  opacity: 0.92;
+}
+/* room-info-name: frame-main 영역의 타이틀 (상단 가운데 정렬) */
+.room-page .frame-main > .room-info-name {
+  margin: 0;
+  padding: 0 20px;
+  font-size: clamp(18px, 2vw, 30px);
+  font-family: var(--font-ko-main);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  text-align: center;
+  color: var(--Black);
+  align-self: center;
 }
 
-/* Room Name (from JSON) */
-.room-hero-text .room-title {
-    font-size: 35px;
-    font-weight: bold;
-    color: var(--color-secondary, #658399);
-    margin: 0;
-    text-align: center;
-    letter-spacing: 1px;
-    position: relative;
-    z-index: 2;
+/* ≤900: 4개 썸네일을 2x2 grid로
+   ⚠️ max-width는 박스(.room-info-thumb-wrap)에 줘야 한다. 안쪽 img(.room-info-thumb)는
+   항상 width:100%로 부모를 꽉 채우므로, img에 주면 부모(여전히 4컬럼 폭)의 절반만 채워지고
+   나머지 절반이 흰 여백으로 남는다. */
+@media screen and (max-width: 900px) {
+  .room-page .room-info-section {
     padding: 60px 20px;
+    gap: 24px;
+  }
+  .room-page .room-info-thumb-wrap {
+    max-width: calc((100% - 11px) / 2);
+  }
 }
 
-/* Room Slider Styles - Simple Carousel */
-.room-slide {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 75%; /* 너비 더 늘림 */
-    height: 85%; /* 높이도 더 늘림 */
-    border-radius: 20px;
-    overflow: hidden;
-    pointer-events: auto;
-    opacity: 0; /* 초기값 설정 */
-    visibility: hidden; /* 초기값 설정 */
-    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.8s ease,
-                visibility 0.8s ease,
-                width 1s ease,
-                height 1s ease;
+/* ≤768 모바일: con3 4개 카테고리 → 세로 1열 스택 +
+   bg-wrapper / bg4 좌우 패딩 제거 → rectangle-div가 풀폭으로 표시 */
+@media screen and (max-width: 768px) {
+  .room-page .con3 {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .room-page .img13,
+  .room-page .img22,
+  .room-page .img4,
+  .room-page .img42 {
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    height: 250px !important;       /* 300 → 250 (-50px) */
+  }
+  /* rectangle-div(회색 bg) 좌우 패딩 제거 */
+  .room-page .frame-main .bg-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .room-page .frame-main .bg4 {
+    padding-left: 20px !important;     /* 텍스트와 가장자리 최소 여백만 유지 */
+    padding-right: 20px !important;
+    width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+  /* 모바일에서 frame-section 좌우 패딩 30으로 축소 */
+  .room-page .frame-main .frame-section,
+  .room-page .frame-section {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
 }
-
-.room-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-/* Active slide (center) */
-.room-slide.active {
-    transform: translate(-50%, -50%);
-    width: 75%;
-    height: 90%;
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
-}
-
-/* Next slide (right) */
-.room-slide.next {
-    transform: translate(calc(50% + 30px), -50%);
-    width: 75%;
-    height: 90%;
-    opacity: 0.7;
-    visibility: visible;
-    z-index: 2;
-}
-
-/* Previous slide (left) */
-.room-slide.prev {
-    transform: translate(calc(-150% - 30px), -50%);
-    width: 75%;
-    height: 90%;
-    opacity: 0.7;
-    visibility: visible;
-    z-index: 2;
-}
-
-/* Hidden slides */
-.room-slide.hidden {
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1;
-}
-
-.room-slide.hidden-next {
-    transform: translate(calc(150% + 60px), -50%);
-}
-
-.room-slide.hidden-prev {
-    transform: translate(calc(-250% - 60px), -50%);
-}
-
-/* Mobile specific styles */
-@media (max-width: 768px) {
-    .room-slide.active {
-        transform: translate(-50%, -50%);
-        width: 90vw;
-        height: 90%;
-        opacity: 1;
-        visibility: visible;
-        z-index: 10;
-    }
-
-    .room-slide.next {
-        transform: translate(calc(50% + 30px), -50%) scale(0.7);
-        width: 70vw;
-        height: 70%;
-        opacity: 0.5;
-        visibility: visible;
-        z-index: 2;
-    }
-
-    .room-slide.prev {
-        transform: translate(calc(-150% - 30px), -50%) scale(0.7);
-        width: 70vw;
-        height: 70%;
-        opacity: 0.5;
-        visibility: visible;
-        z-index: 2;
-    }
-
-    .room-slide.hidden {
-        opacity: 0;
-        visibility: hidden;
-        z-index: 1;
-    }
-
-    .room-slide.hidden-next {
-        transform: translate(calc(120% + 30px), -50%);
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .room-slide.hidden-prev {
-        transform: translate(calc(-200% - 30px), -50%);
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-
-/* ========================================
-   ROOM SLIDER NAVIGATION
-   ======================================== */
-.room-slider-nav {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10%;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.room-nav-btn {
-    width: 50px;
-    height: 50px;
-    border: 2px solid white;
-    background: transparent;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    pointer-events: auto;
-}
-
-.room-nav-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: white;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-
-.room-nav-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-}
-
-
-.room-nav-prev {
-    transform: translateX(60px);
-}
-
-.room-nav-prev:hover {
-    transform: translateX(60px) scale(1.1);
-}
-
-.room-nav-next {
-    transform: translateX(-60px);
-}
-
-.room-nav-next:hover {
-    transform: translateX(-60px) scale(1.1);
-}
-
-
-/* Rotating Circular Text in Hero */
-.room-hero-circular-text {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 1; /* 투명도 제거 */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.room-hero-circular-text svg {
-    width: 100%;
-    height: 100%;
-    animation: rotate 15s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.room-hero-circular-text text {
-    fill: white; /* 흰색으로 변경 */
-    font-family: var(--font-en-main);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-/* 오버레이 안에 있는 circular 텍스트도 흰색 */
-.room-name-overlay .room-hero-circular-text text {
-    fill: white;
-    opacity: 1; /* 투명도 제거 */
-}
-
-/* ========================================
-   ROOM DESCRIPTION SECTION
-   ======================================== */
-.room-description-section {
-    padding: 40px 20px;
-    background: var(--color-primary, #e6f3ff); /* 그라데이션 끝 색상 */
-    text-align: center;
-}
-
-.room-description-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.room-description {
-
-    font-size: 16px;
-    line-height: 1.8;
-    color: #666;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    white-space: pre-line;
-    word-break: keep-all;
-    overflow-wrap: normal;
-}
-
-/* ========================================
-   EXISTING STYLES
-   ======================================== */
-.content-wrap {
-    padding: 80px 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    background: var(--color-primary, #e6f3ff); /* 그라데이션 끝 색상 */
-}
-
-/* Desktop only - remove padding-top */
-@media (min-width: 1024px) {
-    .content-wrap {
-        padding-top: 0;
-    }
-}
-
-/* Mobile - also remove padding-top */
-@media (max-width: 768px) {
-    .content-wrap {
-        padding-top: 0;
-    }
-}
-
-.room-description-wrap {
-    text-align: center;
-    margin-bottom: 100px;
-}
-
-.room-title {
-    font-family: var(--font-ko-main);
-    font-size: 36px;
-    font-weight: bold;
-    color: var(--color-secondary, #658399);
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-}
-
-.room-image-circle {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid var(--color-secondary, #658399);
-}
-
-.room-image-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.room-description {
-
-    font-size: 18px;
-    line-height: 1.8;
-    color: #666;
-    max-width: 800px;
-    margin: 0 auto;
-    white-space: pre-line;
-    word-break: keep-all;
-    overflow-wrap: normal;
-}
-
-/* ========================================
-   ROOM INFORMATION SECTION
-   ======================================== */
-.room-info-title-styled {
-    font-family: var(--font-en-main);
-    font-size: 42px;
-    font-weight: normal;
-    color: var(--color-secondary, #658399);
-    margin: 0 0 40px 0;
-    letter-spacing: 2px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.room-info-title-styled::before {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--color-secondary, #658399);
-    margin-right: 20px;
-}
-
-.room-info-title-styled::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--color-secondary, #658399);
-    margin-left: 20px;
-}
-
-.room-info-section {
-    padding: 60px 0;
-}
-
-.room-info-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.room-custom-description {
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 60px;
-    
-}
-
-.room-info-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-}
-
-/* Left Side - Images */
-.room-info-left {
-    position: sticky;
-    top: 100px;
-}
-
-.room-main-image {
-    width: 100%;
-    height: 500px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.room-main-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.room-thumbnails {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.room-thumb {
-    width: 100%;
-    height: 100px;
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-.room-thumb.active {
-    opacity: 1;
-    border: 2px solid var(--color-secondary, #658399);
-}
-
-.room-thumb:hover {
-    opacity: 1;
-}
-
-.room-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-/* Room Details Section */
-.room-details-section {
-    padding: 0;
-    text-align: left;
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-.details-section-title {
-    font-family: var(--font-ko-main);
-    font-size: 22px;
-    color: var(--color-secondary, #658399);
-    margin-bottom: 0;
-    font-weight: 600;
-    text-align: left;
-    padding: 0 5px 15px 5px;
-    border-bottom: 1px solid var(--color-secondary, #658399);
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.room-details-content {
-    padding: 20px 30px;
-    border-bottom: 1px solid var(--color-secondary, #658399);
-    background: color-mix(in srgb, var(--color-secondary) 10%, transparent);
-}
-
-.room-details-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    width: 100%;
-}
-
-.room-detail-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5px;
-    border-bottom: 1px solid var(--color-secondary, #658399);
-}
-
-.room-detail-item:last-child {
-    border-bottom: none;
-}
-
-.detail-label {
-    font-size: 16px;
-    color: var(--color-secondary, #658399);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.detail-value {
-    font-size: 16px;
-    color: #555;
-    
-}
-
-/* Usage Guide */
-/* Amenities Section */
-.room-amenities-section {
-    padding: 0;
-    text-align: left;
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-.amenities-section-title {
-    font-family: var(--font-ko-main);
-    font-size: 22px;
-    color: var(--color-secondary, #658399);
-    margin-bottom: 0;
-    font-weight: 600;
-    text-align: left;
-    padding: 15px 5px;
-    border-bottom: 1px solid var(--color-secondary, #658399);
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.amenities-content {
-    padding: 20px 30px;
-    border-bottom: 1px solid var(--color-secondary, #658399);
-    background: color-mix(in srgb, var(--color-secondary) 10%, transparent);
-}
-
-.amenities-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-start;
-}
-
-.amenity-icon-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 10px;
-    background: rgba(101, 131, 153, 0.1);
-    border-radius: 15px;
-    font-size: 14px;
-    color: #666;
+/* ≤450: 썸네일 1열 (같은 이유로 wrap에 적용) */
+@media screen and (max-width: 450px) {
+  .room-page .room-info-thumb-wrap {
     max-width: 100%;
-    min-width: 0;
+  }
 }
 
-.amenity-icon-item span {
-    min-width: 0;
-    word-break: keep-all;
-    overflow-wrap: normal;
+.room-page .frame-main {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 28px;                 /* 55 → 28 (다시 반으로 축소) */
+  padding-top: 0;            /* 80 → 0 (상단 여백 제거) */
+  padding-bottom: 80px;      /* 하단 여백 추가 */
+  text-align: left;
+  font-size: 30px;
+  color: var(--color-white);
+  font-family: var(--font-ko-main);
+  position: relative;
+  overflow: visible;
 }
 
-.amenity-icon {
-    width: 20px;
-    height: 20px;
-    color: var(--color-secondary, #658399);
-    flex-shrink: 0;
+/* ===========================
+   1. INFO 섹션 (객실 정보 / 크기 / 체크인 / 어메니티 / 인원 + 이용 안내)
+   =========================== */
+.room-page .frame-main .bg-wrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;       /* 컨텐츠 가운데 정렬 */
+  padding: 0 20px;               /* 양쪽 최소 여백만 (기존 246/254 고정 패딩 제거) */
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.room-page .frame-main .bg4 {
+  position: relative;
+  flex: 0 1 auto;                /* 컨텐츠 폭에 맞춰 유연하게 (기존 flex: 1 stretch 제거) */
+  width: fit-content;            /* 내부 텍스트 폭 기준으로 사이즈 조정 */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 60px 60px 57px;       /* 내부 텍스트 주위 여백 */
+  isolation: isolate;
+  gap: 54px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+/* bg-item: rectangle-div 영역의 상단에 붙는 1px 검정 라인 */
+.room-page .frame-main .bg-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #000;
+  border: none;
+  z-index: 1;
+  box-sizing: border-box;
+}
+.room-page .frame-main .rectangle-div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-gray-200, rgba(0, 0, 0, 0.1));
+  flex-shrink: 0;
+  z-index: -1;
+}
+.room-page .frame-main .frame-section {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 63px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  text-align: left;
+  font-size: 20px;
+  color: var(--Black);
+  font-family: var(--font-ko-main);
+  max-width: 100%;
+}
+.room-page .frame-main .info-left-parent {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 100%;
+}
+.room-page .frame-main .info-left {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  z-index: 2;
+  max-width: 100%;
+}
+/* info-row: 한 줄 정보 (불릿 + 라벨 + 값) — 통일된 row 컨테이너 */
+.room-page .frame-main .info-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  max-width: 100%;
+}
+/* info-bullet: 검정 점 (모든 row 공통) */
+.room-page .frame-main .info-bullet {
+  height: 5px;
+  width: 5px;
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--Black);
+  flex-shrink: 0;
+}
+/* info-label: 라벨(객실 정보 / 크기 / 체크인/아웃 / 어메니티 / 기준 인원) */
+.room-page .frame-main .info-label {
+  margin: 0;
+  width: 100px;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-ko-main);
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  line-height: 180%;
+}
+/* info-label--multi: 줄바꿈 들어가는 라벨 (체크인/체크아웃)만 line-height 줄임 */
+.room-page .frame-main .info-label--multi {
+  line-height: 130%;
+  height: 52px;
+}
+/* info-value: 값(설명 텍스트) */
+.room-page .frame-main .info-value {
+  font-size: 15px;
+  font-family: var(--font-ko-sub);
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  white-space: pre-wrap;
+  flex-shrink: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+.room-page .frame-main .info-right {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  max-width: 100%;
+  z-index: 1;
+  flex-direction: column;
+}
+/* info-right-header: 불릿 + "이용 안내" 라벨 */
+.room-page .frame-main .info-right-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.room-page .frame-main .info-bullet-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.room-page .frame-main .info-right-label {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-ko-main);
+  letter-spacing: -0.01em;
+  line-height: 180%;
+}
+/* info-right-body: 이용 안내 본문 */
+.room-page .frame-main .info-right-body {
+  font-size: 15px;
+  line-height: 150%;
+  font-family: var(--font-ko-sub);
+  text-align: left;
+  max-width: 100%;
+  letter-spacing: -0.01em;
 }
 
-/* Room Usage Guide */
-.room-usage-guide {
-    padding: 0;
-    text-align: left;
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto;
+/* ===========================
+   ROOM FLOORPLAN 섹션 (객실 평면도)
+   - 제목("Floor Plan") + 이미지 한 장
+   - 크롤링 이미지가 없으면 mapper가 섹션 전체를 display:none 처리 (기본값도 none)
+   =========================== */
+.room-page .room-floorplan-section {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px clamp(20px, 5vw, 100px);
+  box-sizing: border-box;
+  gap: 40px;
+  background-color: var(--color-whitesmoke);
+}
+.room-page .room-floorplan-header {
+  align-self: flex-start;
+  padding-left: clamp(0px, 4vw, 80px);
+}
+.room-page .room-floorplan-title {
+  margin: 0;
+  font-size: clamp(36px, 4vw, 56px);
+  font-family: var(--font-italiana);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 120%;
+  color: var(--Black);
+}
+.room-page .room-floorplan-image-wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.room-page .room-floorplan-image {
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-.usage-guide-title {
-    font-family: var(--font-ko-main);
-    font-size: 22px;
-    color: var(--color-secondary, #658399);
-    margin-bottom: 0;
-    font-weight: 600;
-    text-align: left;
-    padding: 15px 5px;
-    border-bottom: 1px solid var(--color-secondary, #658399);
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@media screen and (max-width: 900px) {
+  .room-page .room-floorplan-section {
+    padding: 60px 20px;
+    gap: 24px;
+  }
 }
 
-.usage-guide-content {
-    padding: 20px 30px;
-    border-bottom: 1px solid var(--color-secondary, #658399);
-    background: color-mix(in srgb, var(--color-secondary) 10%, transparent);
-    transition: all 0.3s ease;
+/* ===========================
+   2. CON3 (4개 카테고리 - In-room / BBQ장 / Spa / Poolvilla)
+   =========================== */
+.room-page .con3-parent {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  /* con3-parent가 frame-main 외부로 분리되면서 inherit가 끊김 → 폰트 명시 */
+  font-size: 30px;
+  color: var(--color-white);
+  font-family: var(--font-ko-main);
+  text-align: left;
+}
+/* con3: 4개 카테고리 (In-room / BBQ장 / Spa / Poolvilla)
+   - 데스크톱~태블릿: 한 줄에 4개 nowrap (어떤 화면에서도 줄바꿈 X)
+   - ≤768 모바일: 세로 1열로 스택 */
+.room-page .con3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  z-index: 2;
+  max-width: 100%;
+}
+.room-page .img13,
+.room-page .img22,
+.room-page .img4,
+.room-page .img42 {
+  position: relative;            /* ::after 오버레이 기준 */
+  height: 602px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex: 1 1 0;
+  padding: 0 20px;
+}
+/* 컨셉 이미지 배경 — room-mapper.js에서 동적 매핑 */
+
+/* OFF (기본): 살짝 어두운 톤으로 (밝기 차이 최소화)
+   ON (hover): 오버레이 완전 제거 → 본 이미지 100% 밝기 */
+.room-page .img13::after,
+.room-page .img22::after,
+.room-page .img4::after,
+.room-page .img42::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);   /* 0.15 → 0.3 (off 상태 두 배 어둡게) */
+  transition: opacity 0.3s var(--ease-elegant) !important;
+  pointer-events: none;
+  z-index: 0;
+}
+.room-page .img13:hover::after,
+.room-page .img22:hover::after,
+.room-page .img4:hover::after,
+.room-page .img42:hover::after {
+  opacity: 0;
+}
+/* empty-image-placeholder: 오버레이 제거 → 아이콘 표시 */
+.room-page .img13.empty-image-placeholder::after,
+.room-page .img22.empty-image-placeholder::after,
+.room-page .img4.empty-image-placeholder::after,
+.room-page .img42.empty-image-placeholder::after {
+  display: none;
+}
+/* 텍스트는 오버레이 위에 표시 */
+.room-page .img13 > *,
+.room-page .img22 > *,
+.room-page .img4 > *,
+.room-page .img42 > * {
+  position: relative;
+  z-index: 1;
+}
+/* con3 카테고리 텍스트 (In-room / BBQ장 / Spa / Poolvilla)
+   bg 위 흰색 굵은 텍스트 */
+.room-page .in-room,
+.room-page .h13,
+.room-page .spa,
+.room-page .poolvilla {
+  margin: 0;
+  height: auto;
+  font-size: 30px;
+  line-height: 180%;
+  font-weight: 700;
+  font-family: var(--font-ko-main);
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);   /* 배경 위에서 텍스트 가독성 확보 */
+  display: inline-block;
+  text-align: center;
 }
 
-.usage-guide-content p[data-room-guide] {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #666;
-    white-space: pre-line;
-    
-    text-align: left;
-    margin: 0;
+/* ===========================
+   3. CON-42 (Roomview - 4개 객실 미리보기)
+   =========================== */
+/* roomview-slider-wrap: index.html의 .room-slider 패턴 그대로 사용 + View More 버튼
+   .room-slider / .room-slider-track / .room-card 스타일은 index.css에서 가져옴 (이미 link됨) */
+.room-page .roomview-slider-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px 22px 80px;
+  box-sizing: border-box;
 }
 
-/* Toggle Button Styles */
-.section-toggle-btn {
-    background: none;
-    border: none;
-    color: var(--color-secondary, #658399);
-    font-size: 24px;
-    cursor: pointer;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease;
+/* View More 버튼: 우측 하단 작은 버튼 (room/index 둘 다 사용)
+   .room-page 스코프 없이 일반 룰로 두어 index.html 의 .roomview-section 안에서도 동작 */
+.roomview-view-more {
+  align-self: flex-end;
+  padding-right: 10px;
+  margin-top: 10px;
 }
+/* room-01/02/03/04, .room-card 스타일은 index.css의 .room-card / .room-slider-track 사용
+   별도 정의 불필요 (이전 .con-42/section 기반 룰 모두 제거) */
 
-.section-toggle-btn:hover {
-    opacity: 0.7;
-}
-
-/* Content transition for smooth collapse */
-.room-details-content,
-.amenities-content,
-.usage-guide-content {
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
-
-.room-details-content.collapsed,
-.amenities-content.collapsed,
-.usage-guide-content.collapsed {
-    padding-top: 0;
-    padding-bottom: 0;
-    max-height: 0;
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    .amenities-list {
-        align-items: flex-start;
-    }
-
-    .amenities-content, .usage-guide-content {
-        padding: 12px 18px;
-    }
-}
-
-/* ========================================
-   MARQUEE SECTION
-   ======================================== */
-.marquee-section {
-    overflow: hidden;
-    padding: 80px 0;
-    background: var(--color-secondary, #658399);
-}
-
-.marquee-container {
-    position: relative;
-    width: 100%;
-    height: 120px;
-    display: flex;
-    align-items: center;
-}
-
-.marquee-text {
-    display: flex;
-    white-space: nowrap;
-    animation: marquee 20s linear infinite;
-}
-
-.marquee-text span {
-    display: inline-block;
-    font-family: var(--font-en-main);
-    font-size: 80px;
-    color: white;
-    opacity: 0.3;
-    letter-spacing: 5px;
-    padding: 0 50px;
-    text-transform: uppercase;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* ========================================
-   FULL BANNER SECTION
-   ======================================== */
-.full-banner {
-    width: 100%;
-    height: 600px;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: transparent; /* 배경색 투명 */
-    position: relative;
-    margin: 80px 0;
-    display: block;
-}
-
-/* Force display for debugging */
-.full-banner[data-room-banner] {
-    min-height: 600px;
-    opacity: 1 !important;
-    transform: none !important;
-    position: relative;
-    overflow: visible;
-}
-
-/* Position property text above banner */
-.full-banner .property-en-bg-text {
-    position: absolute;
-    top: -70px;
-    left: 0px;
-    z-index: 2;
-    opacity: 0;
-    animation: slideInFromLeft 1.2s ease-out 0.5s forwards;
-}
-
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-150px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-
-/* Desktop parallax */
-@media (min-width: 1025px) {
-    .full-banner {
-        background-attachment: fixed;
-    }
-}
-
-/* ========================================
-   GALLERY SECTION - FLEXIBLE GRID
-   ======================================== */
-.exterior-gallery-section {
-    padding: 50px 0;
-    background: transparent; /* 투명으로 body 색상 적용 */
-}
-
-.gallery-grid-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Gallery Title */
-.gallery-grid-title {
-    font-family: var(--font-ko-main);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--color-secondary, #658399);
-    margin: 0 0 60px 0;
-    text-align: left;
-    
-    letter-spacing: 2px;
-}
-
-/* Gallery Grid Wrapper */
-.gallery-grid-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Gallery Rows - Flexible Layout */
-.gallery-row {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.gallery-row.row-1 {
-    grid-template-columns: 1fr;
-}
-
-.gallery-row.row-2 {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery-row.row-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-/* Gallery Items */
-.gallery-item {
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media screen and (max-width: 1725px) {
+  .room-page .info-left-parent {
+    flex-wrap: wrap;
+  }
+  .room-page .info-left,
+  .room-page .info-right {
     flex: 1;
-    overflow: hidden;
-    border-radius: 0;
-    position: relative;
-    aspect-ratio: 4/3;
+  }
+  .room-page .con3 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
-
-.gallery-row.row-1 .gallery-item {
-    max-width: none;
+@media screen and (max-width: 1325px) {
+  .room-page .frame-main {
+    gap: 54px;
+  }
+  .room-page .bg-wrapper {
+    padding-left: 127px;
+    padding-right: 123px;
+  }
+  .room-page .frame-section {
+    padding-left: 31px;
+    padding-right: 31px;
+  }
+  .room-page .info-left,
+  .room-page .info-right {
+    min-width: 100%;
+  }
+  .room-page .con-42 {
+    padding-bottom: 79px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .room-page .frame-main {
+    height: auto;
+    gap: 27px;
+  }
+  .room-page .bg-wrapper {
+    padding-left: 63px;
+    padding-right: 61px;
+  }
+  .room-page .bg4 {
+    gap: 27px;
+  }
+  .room-page .info-left-parent {
+    gap: 20px;
+    flex-direction: column !important;     /* 모바일: info-left 위, info-right(이용안내+.ott) 아래로 스택 */
+    align-items: stretch !important;
+  }
+  .room-page .info-left,
+  .room-page .info-right {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+  }
+  /* info-left 내부 info-row 간 gap 절반으로 축소 (30 → 15) */
+  .room-page .info-left {
+    gap: 15px !important;
+  }
+  /* info-row: 모바일에서 라벨/값 줄바꿈 허용 + 내부 gap 절반으로 축소 (25 → 12) */
+  .room-page .info-row {
+    flex-wrap: wrap;
+    gap: 12px !important;
+    row-gap: 6px !important;          /* wrap된 줄 간격은 더 짧게 */
+  }
+  /* info-value: 값 영역이 라벨 다음 줄로 줄바꿈되도록 풀폭 */
+  .room-page .info-row .info-value {
+    flex-basis: 100%;
     width: 100%;
-    aspect-ratio: 21/9;
-}
-
-.gallery-item img {
+  }
+  /* info-label--multi (체크인/체크아웃): 모바일에서 <br> 무시하고 한 줄로 표시 */
+  .room-page .info-label--multi {
+    width: auto !important;
+    height: auto !important;
+    white-space: nowrap !important;
+    line-height: 180% !important;
+  }
+  .room-page .info-label--multi br {
+    display: none !important;
+  }
+  /* info-right-body: 이용안내 본문 좌측 정렬 + 한국어 단어 단위 줄바꿈 */
+  .room-page .info-right-body {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    text-align: left !important;
+    word-break: keep-all;
+  }
+  /* info-right 영역도 동일하게 gap 절반 축소 (22 → 11, 20 → 10) */
+  .room-page .info-right {
+    gap: 11px !important;
+  }
+  .room-page .info-right-header {
+    gap: 10px !important;
+  }
+  /* con3 카테고리는 ≤768에서만 1열 스택 (그 이상에서는 항상 4컬럼) */
+  .room-page .in-room,
+  .room-page .h13,
+  .room-page .spa,
+  .room-page .poolvilla {
+    font-size: 24px;
+    line-height: 43px;
+  }
 }
-
-/* Fade Up Animation */
-.animate-fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity, transform; /* GPU 가속 */
-}
-
-.animate-fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Animation Delays */
-[data-delay="100"] { transition-delay: 0.1s; }
-[data-delay="200"] { transition-delay: 0.2s; }
-[data-delay="300"] { transition-delay: 0.3s; }
-[data-delay="400"] { transition-delay: 0.4s; }
-[data-delay="500"] { transition-delay: 0.5s; }
-[data-delay="600"] { transition-delay: 0.6s; }
-[data-delay="700"] { transition-delay: 0.7s; }
-[data-delay="800"] { transition-delay: 0.8s; }
-[data-delay="900"] { transition-delay: 0.9s; }
-[data-delay="1000"] { transition-delay: 1.0s; }
-[data-delay="1100"] { transition-delay: 1.1s; }
-
-/* 모바일에서 애니메이션 최적화 */
-@media (max-width: 768px) {
-    .animate-fade-up {
-        transform: translateY(30px); /* 모바일에서 더 작은 이동 거리 */
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* 더 빠른 애니메이션 */
-    }
-
-    /* 모바일에서 더 빠른 delay */
-    [data-delay="600"] { transition-delay: 0.2s; }
-    [data-delay="700"] { transition-delay: 0.3s; }
-    [data-delay="800"] { transition-delay: 0.4s; }
-    [data-delay="900"] { transition-delay: 0.5s; }
-    [data-delay="1000"] { transition-delay: 0.6s; }
-    [data-delay="1100"] { transition-delay: 0.7s; }
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .gallery-simple-container {
-        gap: 40px;
-    }
-
-    .gallery-vertical {
-        width: 150px;
-        height: 250px;
-    }
-
-    .gallery-horizontal {
-        width: 250px;
-        height: 150px;
-    }
-
-    .gallery-title-simple {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 768px) {
-    .exterior-gallery-section {
-        padding: 60px 20px;
-    }
-
-    .gallery-simple-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .gallery-center-simple {
-        order: -1; /* 제목을 맨 위로 */
-        padding: 0;
-        margin-bottom: 20px;
-    }
-
-    .gallery-title-simple {
-        font-size: 32px;
-        text-align: left;
-    }
-
-    .gallery-left-simple,
-    .gallery-right-simple {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .gallery-vertical,
-    .gallery-horizontal {
-        width: 100%;
-        height: 250px;
-    }
-}
-
-.dynamic-gallery {
-    display: grid;
-    gap: 10px;
-}
-
-/* Dynamic gallery layouts based on image count */
-.dynamic-gallery[data-count="1"] {
-    grid-template-columns: 1fr;
-}
-
-.dynamic-gallery[data-count="1"] .gallery-item {
-    aspect-ratio: 16/9;
-}
-
-.dynamic-gallery[data-count="2"] {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.dynamic-gallery[data-count="2"] .gallery-item {
-    aspect-ratio: 4/3;
-}
-
-.dynamic-gallery[data-count="3"] {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(350px, auto);
-}
-
-.dynamic-gallery[data-count="3"] .gallery-item:first-child {
-    grid-column: span 2;
-}
-
-.dynamic-gallery[data-count="3"] .gallery-item:nth-child(2) {
-    grid-column: span 1;
-}
-
-.dynamic-gallery[data-count="3"] .gallery-item:nth-child(3) {
-    grid-column: span 1;
-}
-
-.dynamic-gallery[data-count="4"] {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(350px, auto);
-}
-
-.dynamic-gallery[data-count="5"] {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(350px, auto);
-}
-
-.dynamic-gallery[data-count="5"] .gallery-item:first-child {
-    grid-column: span 2;
-}
-
-.dynamic-gallery[data-count="5"] .gallery-item:nth-child(2) {
-    grid-column: span 1;
-}
-
-.dynamic-gallery[data-count="5"] .gallery-item:nth-child(3) {
-    grid-column: span 1;
-}
-
-.dynamic-gallery[data-count="5"] .gallery-item:nth-child(4) {
-    grid-column: span 1;
-}
-
-.dynamic-gallery[data-count="5"] .gallery-item:nth-child(5) {
-    grid-column: span 1;
-}
-
-/* 6개 레이아웃 - 2-2-1-1 패턴 */
-.dynamic-gallery[data-count="6"] {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(350px, auto);
-}
-
-.dynamic-gallery[data-count="6"] .gallery-item:nth-child(5) {
-    grid-column: span 2;
-}
-
-.dynamic-gallery[data-count="6"] .gallery-item:nth-child(6) {
-    grid-column: span 2;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 0;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
-@media (max-width: 1024px) {
-    .room-hero-title {
-        font-size: 40px;
-    }
-
-    .room-hero-content .room-title {
-        font-size: 22px;
-    }
-
-    .room-hero-content .room-description {
-        font-size: 15px;
-    }
-
-    .room-hero-bg-text {
-        font-size: 10vw;
-    }
-
-    .room-circular-text {
-        width: 150px;
-        height: 150px;
-        top: -75px;
-        right: 50%;
-        transform: translateX(50%);
-    }
-
-    .room-circular-text text {
-        font-size: 12px;
-        letter-spacing: 5px;
-    }
-
-    .room-info-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .room-info-left {
-        position: relative;
-        top: 0;
-    }
-}
-
-/* 모바일 전용 네비게이션 - 기본적으로 숨김 */
-.room-slider-nav-mobile {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    /* 데스크탑 네비게이션 숨김 */
-    .room-slider-nav {
-        display: none;
-    }
-
-    /* 모바일 네비게이션 표시 */
-    .room-slider-nav-mobile {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: auto;
-        z-index: 20;
-    }
-
-    /* 모바일 버튼 - 슬라이더 컨테이너 기준 */
-    .room-nav-btn-mobile {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background: rgba(0, 0, 0, 0.3);
-        border: 2px solid white;
-        border-radius: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 21;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        pointer-events: auto;
-        touch-action: manipulation;
-    }
-
-    .room-nav-btn-mobile svg {
-        color: white;
-    }
-
-    .room-nav-prev-mobile {
-        left: 10px;
-    }
-
-    .room-nav-next-mobile {
-        right: 10px;
-    }
-
-
-    /* 슬라이더 섹션만 좌우 패딩 제거 */
-    .room-hero-section {
-        height: 70vh; /* 모바일에서는 70vh */
-        min-height: 400px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .room-hero-slider {
-        width: 90vw !important;
-        height: 100%; /* 섹션 높이 전체 사용 */
-        margin: 0 auto;
-        position: relative;
-    }
-
-    .room-name-section {
-        display: block !important; /* 모바일에서 강제로 표시 */
-        padding: 40px 20px 30px; /* 모바일 패딩 */
-        background: var(--color-primary, #e6f3ff);
-    }
-
-    /* 텍스트 영역은 패딩 유지 */
-    .room-hero-text {
-        padding: 0 20px;
-    }
-
-    .room-hero-title {
-        font-size: 32px;
-        letter-spacing: 0.05em;
-    }
-
-    .room-hero-content .room-title {
-        font-size: 20px;
-    }
-
-    .room-hero-content .room-description {
-        font-size: 14px;
-    }
-
-    .room-hero-bg-text {
-        font-size: 12vw;
-    }
-
-    .room-hero-image-container {
-        width: 80vw;
-        height: 40vh;
-        min-height: 300px;
-    }
-
-    .room-circular-text {
-        width: 120px;
-        height: 120px;
-        top: -60px;
-        right: 50%;
-        transform: translateX(50%);
-    }
-
-    .room-circular-text text {
-        font-size: 10px;
-        letter-spacing: 4px;
-    }
-
-    .room-title {
-        font-size: 28px;
-    }
-
-    .room-info-title,
-    .gallery-title {
-        font-size: 36px;
-    }
-
-    /* 갤러리 이미지 모바일 - 한 장씩 꽉 차게 */
-    .gallery-row {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .gallery-item {
-        width: 100%;
-        aspect-ratio: 4/3;
-    }
-
-    .gallery-row.row-1 .gallery-item,
-    .gallery-row.row-2 .gallery-item,
-    .gallery-row.row-3 .gallery-item {
-        aspect-ratio: 4/3;
-        width: 100%;
-        max-width: none;
-    }
-
-    /* 갤러리 제목도 26px */
-    .gallery-grid-title {
-        font-size: 26px !important;
-    }
-
-    /* .room-details-grid는 display: flex이므로 grid-template-columns 제거 */
-
-    .room-thumbnails {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .marquee-text span {
-        font-size: 60px;
-    }
-
-    /* 모바일 슬라이더 조정 - fade 효과로 전환 */
-    .room-hero-slider {
-        width: 90vw !important;
-        height: 100%;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    .room-slider-container {
-        overflow: hidden;
-        width: 90vw !important;
-        height: 100%;
-        position: relative;
-        border-radius: 12px;
-    }
-
-    /* Mobile Slide States Override */
-    .room-slide {
-        width: 90vw !important;
-        height: 100%;
-    }
-
-    /* Mobile: Fade effect only for active slide */
-    .room-slide.active {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-        visibility: visible;
-        z-index: 10;
-        width: 90vw !important;
-    }
-
-    .room-slide.next {
-        transform: translate(calc(40% + 20px), -50%) scale(0.7);
-        width: 70vw !important;
-        height: 70%;
-        opacity: 0.5;
-        visibility: visible;
-        z-index: 2;
-    }
-
-    .room-slide.prev {
-        transform: translate(calc(-140% - 20px), -50%) scale(0.7);
-        width: 70vw !important;
-        height: 70%;
-        opacity: 0.5;
-        visibility: visible;
-        z-index: 2;
-    }
-
-    .room-slide.hidden,
-    .room-slide.hidden-far-left,
-    .room-slide.hidden-far-right {
-        opacity: 0;
-        visibility: hidden;
-        z-index: 1;
-    }
-
-    .room-slide.hidden-far-left {
-        transform: translate(calc(-200% - 30px), -50%);
-    }
-
-    .room-slide.hidden-far-right {
-        transform: translate(calc(120% + 30px), -50%);
-    }
-
-    .room-slide img {
-        width: 100% !important;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        max-width: none !important;
-    }
-
-
-    /* 모바일 room-details 조정 */
-    .room-details-content {
-        padding: 0;
-    }
-
-    .room-detail-item {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 12px 18px;
-        border-bottom: 1px solid rgba(101, 131, 153, 0.2);
-    }
-
-    .room-detail-item:last-child {
-        border-bottom: none;
-    }
-
-    .detail-label {
-        font-weight: 600;
-        color: var(--color-secondary, #658399);
-        flex: 0 0 50%;
-        word-break: keep-all;
-    }
-
-    .detail-value {
-        margin-left: 0;
-        flex: 1;
-        text-align: left;
-        word-break: break-word;
-        line-height: 1.5;
-    }
-
-    /* property-en-bg-text 폰트 크기 조정 */
-    .property-en-bg-text {
-        font-size: 28px !important;
-    }
-
-    /* room-info-title-styled 폰트 크기 조정 */
-    .room-info-title-styled {
-        font-size: 26px !important;
-    }
-
-    .dynamic-gallery[data-count="3"],
-    .dynamic-gallery[data-count="4"],
-    .dynamic-gallery[data-count="5"],
-    .dynamic-gallery[data-count="6"] {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-
-    .dynamic-gallery[data-count="3"] .gallery-item,
-    .dynamic-gallery[data-count="4"] .gallery-item,
-    .dynamic-gallery[data-count="5"] .gallery-item,
-    .dynamic-gallery[data-count="6"] .gallery-item {
-        grid-column: span 1 !important;
-        grid-row: span 1 !important;
-        aspect-ratio: 4/3;
-    }
-
-    /* Mobile banner - disable fixed attachment for performance */
-    .full-banner,
-    .full-banner[data-room-banner] {
-        background-attachment: scroll !important;
-        height: 320px !important;
-        min-height: 320px !important;
-        max-height: 320px !important;
-        margin: 50px 0;
-    }
-
-    .full-banner .property-en-bg-text {
-        top: -50px;
-        left: 0px;
-        white-space: break-spaces;
-    }
-}
-
-@media (max-width: 480px) {
-    .room-hero-title {
-        font-size: 28px;
-    }
-
-    .room-hero-content .room-title {
-        font-size: 18px;
-    }
-
-    .room-hero-content .room-description {
-        font-size: 13px;
-        max-width: 90%;
-    }
-
-    .room-hero-content {
-        margin-top: 0;
-        gap: 30px;
-        padding-top: 60px;
-    }
-
-    .room-slider-nav {
-        bottom: 20px;
-        gap: 20px;
-        padding: 12px 20px;
-    }
-
-    .room-nav-btn {
-        width: 35px;
-        height: 35px;
-    }
-
-    .room-nav-numbers {
-        font-size: 14px;
-    }
-
-    .room-progress-bar {
-        width: 50px;
-        height: 2px;
-    }
-
-    .fullscreen-slider-title {
-        font-size: 42px;
-    }
-
-    .room-image-circle {
-        width: 150px;
-        height: 150px;
-    }
-
-    .room-description {
-        font-size: 16px;
-    }
-
-    .room-info-title,
-    .gallery-title {
-        font-size: 28px;
-    }
-
-    .marquee-text span {
-        font-size: 40px;
-    }
-
-    .room-item .room-number {
-        font-size: 14px;
-        left: -25px;
-        letter-spacing: 4px;
-    }
+@media screen and (max-width: 450px) {
+  .room-page .bg-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  /* info-label, info-right-label: 모바일에서 폰트 사이즈 축소 */
+  .room-page .info-label,
+  .room-page .info-right-label {
+    font-size: 16px;
+    line-height: 29px;
+  }
+  .room-page .info-label--multi {
+    line-height: 21px;
+  }
+  .room-page .in-room,
+  .room-page .h13,
+  .room-page .spa,
+  .room-page .poolvilla {
+    font-size: 18px;
+    line-height: 32px;
+  }
 }

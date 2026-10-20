@@ -14,7 +14,19 @@ class ScrollAnimations {
         this.init();
     }
 
-    init() {}
+    init() {
+        // CSS 애니메이션이 로드되었는지 확인
+        this.ensureAnimationStyles();
+    }
+
+    /**
+     * 애니메이션 CSS가 로드되었는지 확인
+     */
+    ensureAnimationStyles() {
+        if (!document.querySelector('.scroll-animation-ready')) {
+            console.warn('Animation styles not loaded yet');
+        }
+    }
 
     /**
      * 설정 배열로 여러 애니메이션 등록
@@ -330,7 +342,7 @@ class ScrollAnimations {
                 }
 
                 wipeOverlay.style.zIndex = '10';
-                wipeOverlay.style.transition = `width ${animationSpeed}ms ease-in-out`;
+                wipeOverlay.style.transition = `width ${animationSpeed}ms cubic-bezier(0.25, 1, 0.5, 1)`;
                 wipeOverlay.style.overflow = 'hidden';
 
                 // 컨테이너 설정
@@ -438,7 +450,7 @@ class ScrollAnimations {
                     height: 100%;
                     background: inherit;
                     z-index: 10;
-                    transition: width 0.8s ease-in-out;
+                    transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1);
                 }
 
                 .wipe-container.wiping::before {

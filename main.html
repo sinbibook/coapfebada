@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>삼척 코아페바다펜션 - 숙소소개</title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="icon" href="data:,">
+    <title>삼척 코아페바다펜션 - 숙소소개</title>
+    <meta name="description" content="용화해수욕장 근처 인근 펜션입니다. 넓은 객실, 바베큐 시설을 보유하고 있어 가족, 단체로 즐거운 추억 쌓아보세요.">
+    <meta name="keywords" content="">
 
-  <!-- Preload critical resources -->
-  <link rel="preload" href="styles/common.css" as="style">
-  <link rel="preload" href="styles/main.css" as="style">
+    <!-- Stylesheets (index.html과 동일 순서로 로드) -->
+    <link rel="stylesheet" href="./styles/theme.css" />
+    <link rel="stylesheet" href="./styles/common.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/slider-arrows.css" />
+    <link rel="stylesheet" href="./styles/quote-section.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/popup.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
 
-  <!-- Theme CSS -->
-  <link rel="stylesheet" href="styles/theme.css">
-  <link rel="stylesheet" href="styles/common.css">
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- Open Graph Meta Tags for Social Media -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre+ExtraBold:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap" />
+    <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="삼척 코아페바다펜션 - 숙소소개" />
   <meta property="og:description" content="용화해수욕장 근처 인근 펜션입니다. 넓은 객실, 바베큐 시설을 보유하고 있어 가족, 단체로 즐거운 추억 쌓아보세요." />
@@ -28,87 +41,179 @@
   <meta name="naver-site-verification" content="22c575097be445d6ccf91d660002ebf477f8f475" />
   <meta name="google-site-verification" content="kL5VHGJXnf5wSdPm8uriSnFSljJ3tig4zhIUTSa17Sk" />
 </head>
-<body>
+  <body>
+    <div class="main">
+      <!-- header.html include -->
+      <div id="header-container"></div>
 
-  <main>
-      <section class="page-hero-section">
-        <!-- CUSTOM FIELD : 메인 소개 섹션 이미지 매핑 1장 -->
-          <div class="hero-background">
-              <img data-main-hero-img>
+      <!-- ===================== 1. HERO ===================== -->
+      <!-- CUSTOM FIELD : 숙소소개 메인 소개 섹션 이미지 매핑 (동적생성) -->
+      <section class="con-1-wrapper">
+        <div class="con-1">
+          <div class="bg">
+            <div class="bg-slides" data-main-images>
+              <!-- 동적 생성 (main-mapper.js) -->
+            </div>
+            <div class="bg-inner">
+              <div class="frame-parent">
+                <div class="frame-group">
+                  <div class="prologue-wrapper">
+                    <!-- 하드코딩, 매핑x -->
+                    <h2 class="prologue">Prologue</h2>
+                  </div>
+                  <div class="frame-child"></div>
+                </div>
+                <div class="slider-arrows">
+                  <img class="arrow-line arrow-prev" role="button" tabindex="0" aria-label="이전 슬라이드" loading="lazy" alt="" src="./public/Rectangle-37.svg" />
+                  <h3 class="arrow-num arrow-num-current">01</h3>
+                  <div class="arrow-divider"></div>
+                  <h3 class="arrow-num arrow-num-total">00</h3>
+                  <img class="arrow-line arrow-line-flip arrow-next" role="button" tabindex="0" aria-label="다음 슬라이드" loading="lazy" alt="" src="./public/Rectangle-37.svg" />
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- 페이지 제목 하드코딩 fixed -->
-          <div class="page-title">
-              <span class="property-name-kr" data-main-property-name-kr></span>
-              <h1 class="typing-text" data-text="Prologue" style="--text-length: 8;">Prologue</h1>
-          </div>
-          <!-- Scroll Down Icon -->
-          <div class="scroll-down-icon" onclick="scrollToContent()">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </div>
+        </div>
       </section>
-      <div class="content-wrap scroll-target">
-          <div class="main-container">
-              <div class="text-content">
-                  <div class="logo-line-container">
-                      <!-- 숙소 영문명 매핑 fixed -->
-                      <span class="logo-text-line" data-main-property-name-en></span>
-                      <div class="horizontal-line"></div>
-                  </div>
-                  <!-- custom field : 메인 소개 섹션 타이틀/설명 매핑 -->
-                  <div class="hero-content">
-                      <h2 class="hero-title" data-main-about-title></h2>
-                      <p class="hero-description" data-main-about-description></p>
-                  </div>
+
+      <!-- ===================== PROLOGUE (con-2) ===================== -->
+      <section class="con-2">
+        <img class="bg-icon" alt="" src="./public/bg1@2x.png" />
+        <!-- CUSTOM FIELD : 숙소소개 소개 섹션 타이틀 매핑 -->
+        <div class="prologue-title-wrapper" data-main-intro-title>
+          <h1 class="prologue-title"></h1>
+        </div>
+
+        <div class="image-container">
+          <div class="quote-container" data-main-intro-images>
+            <!-- CUSTOM FIELD : 숙소소개 소개 섹션 이미지 매핑, 이미지 총4장 고정, 1,2번째 이미지 -->
+            <div class="img1-parent">
+              <img class="img1-icon" loading="lazy" alt="" src="" />
+              <img class="img1-icon" loading="lazy" alt="" src="" />
+            </div>
+            <div class="frame-parent2">
+              <div class="wrapper">
+                <h1 class="h1">"</h1>
               </div>
-              <!-- custom field : 소개 블록 동적 생성 - 이미지1, 제목, 설명이 한블록-->
-              <div class="about-content" data-main-introduction>
-                  <!-- 동적으로 about-block들이 생성됩니다 -->
+              <!-- CUSTOM FIELD : 숙소소개 소개 섹션 설명 매핑 -->
+              <div class="quote-content">
+                <div class="muten-lol" data-main-intro-description></div>
               </div>
+            </div>
           </div>
+          <div class="img-r">
+            <div class="image-overlay">
+              <!-- CUSTOM FIELD : 숙소소개 소개 섹션 이미지 매핑, 이미지 총4장 고정, 3,4번째 이미지 -->
+              <div class="image-overlay-child" data-main-intro-images></div>
+              <img class="image-overlay-item" loading="lazy" alt="" src="" />
+              <img class="image-overlay-inner" alt="" src="" />
+            </div>
+          </div>
+        </div>
 
-          <!-- 숙소 외경이미지 0번째 fixed -->
-          <section class="full-banner" data-main-banner>
-              <!-- 숙소 영문명 매핑 fixed -->
-              <div class="closing-property-name" data-closing-property-name></div>
-          </section>
-      </div>
-  </main>
+        <div class="img-r-parent">
+          <div class="frame-wrapper">
+            <!-- 숙소 영문명 매핑 -->
+            <div class="gangreong-mutenrol-parent">
+              <h2 class="gangreong-mutenrol" data-hero-property-name></h2>
+            </div>
+            <div class="con-3">
+              <div class="description-components">
+                <div class="txt-wrapper">
+                  <!-- 하드코딩, 매핑x -->
+                  <div class="txt">
+                    <h2 class="room-preview">Room preview</h2>
+                    <h3 class="h33">쾌적한 객실을 미리만나보세요</h3>
+                    <a class="btn" href="./room.html" data-room-preview-link>
+                      <h3 class="view-more">View More</h3>
+                      <img class="btn-child" alt="" src="./public/Rectangle-8.svg" />
+                    </a>
+                  </div>
+                </div>
+                <!-- room preview section : 커스텀 영역 x / 룸 이미지 매핑 -->
+                <div class="separator-components" data-room-images></div>
+                <img class="description-components-child" loading="lazy" alt="" src="" />
+                <div class="image-components">
+                  <img class="image-components-child" loading="lazy" alt="" src="" />
+                </div>
+              </div>
+              <div class="description-components2">
+                <div class="description-components-item"></div>
+                <div class="frame-container">
+                  <div class="txt-container">
+                    <!-- 하드코딩, 매핑x -->
+                    <div class="txt2">
+                      <h2 class="specials-preview">Specials preview</h2>
+                      <h3 class="h34">다양한 부대시설 미리만나보세요</h3>
+                      <a class="btn2" href="./facility.html" data-specials-preview-link>
+                        <h3 class="view-more">View More</h3>
+                        <img class="btn-child" alt="" src="./public/Rectangle-8.svg" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- specials preview section : 커스텀 영역 x / 부대시설 이미지 매핑 -->
+                  <img class="frame-item" data-specials-images loading="lazy" alt="" src="" />
+                  <img class="description-components-inner" loading="lazy" alt="" src="" />
+                </div>
+              </div>
+              <div class="description-components3">
+                <div class="txt-wrapper">
+                  <!-- 하드코딩, 매핑x -->
+                  <div class="txt3">
+                    <h2 class="local-sights">Local sights</h2>
+                    <h3 class="h35">주변 관광지 미리 만나보세요</h3>
+                    <a class="btn3" href="./nearby-attractions.html">
+                      <h3 class="view-more">View More</h3>
+                      <img class="btn-child" alt="" src="./public/Rectangle-8.svg" />
+                    </a>
+                  </div>
+                </div>
+                <!-- local sights section : 커스텀 영역 x / 주변 관광지 이미지 매핑 -->
+                <div class="separator-components" data-localsights-images></div>
+                <img class="description-components-child" loading="lazy" alt="" src="" />
+                <div class="image-components">
+                  <img class="image-components-child" loading="lazy" alt="" src="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <!-- Common JavaScript -->
-  <script src="js/common.js"></script>
+      <!-- ===================== QUOTE ===================== -->
+      <!-- CUSTOM FIELD : index closing 섹션 데이터 재사용 -->
+      <section class="quote-section" data-closing-section>
+        <img class="quote-bg" loading="lazy" alt="" src="" />
+        <div class="quote-content">
+          <b class="quote-title" data-closing-title></b>
+          <b class="quote-body" data-closing-description></b>
+        </div>
+      </section>
 
-  <!-- Include ImageWithFallback script -->
-  <script src="js/image-with-fallback.js"></script>
+      <!-- ===================== FOOTER ===================== -->
+      <!-- footer.html include -->
+      <div id="footer-container"></div>
+    </div>
 
-  <!-- Image Helpers -->
-  <script src="js/image-helpers.js"></script>
+    <!-- Popup -->
+    <div id="popup-container"></div>
 
-  <!-- Base Data Mapper (must load before preview-handler) -->
-  <script src="js/data-mapper/core/base-mapper.js"></script>
+    <!-- Scripts -->
+    <script src="./js/common.js"></script>
+    <script src="./js/common/scroll-reveal.js"></script>
+    <script src="./js/pages/main.js"></script>
 
-  <!-- Preview Handler for Admin Integration -->
-  <script src="js/preview-handler.js"></script>
+    <!-- Data Mapper -->
+    <script src="./js/image-helpers.js"></script>
+    <script src="./js/data-mapper/core/base-mapper.js"></script>
+    <script src="./js/data-mapper/pages/header-footer-mapper.js"></script>
+    <script src="./js/data-mapper/pages/main-mapper.js"></script>
+    <script src="./js/preview-handler.js"></script>
 
-  <!-- Main Page Mapper -->
-  <script src="js/data-mapper/pages/main-mapper.js"></script>
+    <!-- Header / Footer Loader -->
+    <script src="./js/header-footer-loader.js"></script>
 
-  <!-- Header Footer Mapper -->
-  <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
-
-  <!-- Header and Footer Loader -->
-  <script src="js/header-footer-loader.js"></script>
-
-  <!-- Fullscreen Slider Component (나중에 추가) -->
-  <!-- <script src="js/components/fullscreen-slider.js"></script> -->
-
-  <!-- Scroll Animations -->
-  <script src="js/common/scroll-animations.js"></script>
-
-  <!-- Page-specific script -->
-  <script type="module" src="js/pages/main.js"></script>
-
-
-</body>
+    <!-- Popup -->
+    <script src="./js/popup.js"></script>
+  </body>
 </html>

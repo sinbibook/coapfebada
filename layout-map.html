@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="용화해수욕장 근처 인근 펜션입니다. 넓은 객실, 바베큐 시설을 보유하고 있어 가족, 단체로 즐거운 추억 쌓아보세요.">
-  <!-- Preload critical resources -->
-  <link rel="preload" href="styles/common.css" as="style">
-  <link rel="preload" href="styles/layout-map.css" as="style">
+    <link rel="icon" href="data:,">
+    <title>삼척 코아페바다펜션</title>
 
-  <!-- Theme CSS -->
-  <link rel="stylesheet" href="styles/theme.css">
-  <link rel="stylesheet" href="styles/common.css">
-  <link rel="stylesheet" href="styles/layout-map.css">
-
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/theme.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/quote-section.css">
+    <link rel="stylesheet" href="./styles/directions.css">
+    <link rel="stylesheet" href="./styles/layout-map.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap">
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="삼척 코아페바다펜션" />
@@ -29,78 +36,78 @@
   <meta name="google-site-verification" content="kL5VHGJXnf5wSdPm8uriSnFSljJ3tig4zhIUTSa17Sk" />
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="page-hero-section">
-        <div class="hero-background">
-            <img data-layout-map-hero-image>
-        </div>
-        <div class="page-title">
-            <span class="property-name-kr" data-property-name></span>
-            <h1 class="typing-text" data-text="LAYOUT MAP" style="--text-length: 10;">LAYOUT MAP</h1>
-        </div>
-    </section>
+    <div class="direction layout-map-page">
+        <!-- header.html include -->
+        <div id="header-container"></div>
 
-    <!-- Main Content Section -->
-    <main class="layout-map-page">
-        <!-- Layout Map Intro Section -->
-        <div class="layout-map-intro-section">
-            <div class="layout-map-intro-content animate-element">
-                <!-- layoutMap.sections[0].hero.title 매핑 -->
-                <h2 class="layout-map-title" data-layout-map-about-title></h2>
-                <!-- layoutMap.sections[0].hero.description 매핑 -->
-                <p class="layout-map-description" data-layout-map-about-description></p>
+        <main class="content">
+            <section class="con-2">
+                <div class="bg2">
+                    <!-- Hero Slider Images -->
+                    <div class="bg-slides" data-layout-map-hero-images></div>
+                    <div class="bg-child">
+                        <div class="address-container-parent">
+                            <div class="address-container">
+                                <div class="direction-info">
+                                    <h2 class="direction2" data-layout-map-hero-title>Layout Map</h2>
+                                </div>
+                                <div class="direction-divider"></div>
+                            </div>
+                            <div class="arrow-container">
+                                <div class="arrow2">
+                                    <img class="arrow-child2 arrow-prev" role="button" tabindex="0" aria-label="이전 슬라이드" loading="lazy" alt="" src="./public/Rectangle-37.svg" />
+                                    <h3 class="h36 arrow-num-current">01</h3>
+                                    <div class="arrow-child3"></div>
+                                    <h3 class="h36 arrow-num-total">01</h3>
+                                    <img class="arrow-child4 arrow-next" role="button" tabindex="0" aria-label="다음 슬라이드" loading="lazy" alt="" src="./public/Rectangle-37.svg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Content Wrapper with Background Icon -->
+        <div class="layout-map-content-wrapper">
+            <img class="bg-icon" src="./public/Mask-group@2x.png" alt="" />
+
+            <!-- Section Title, Description & Image Grid (from homepage.customFields.pages.layoutMap.sections[0].about) -->
+            <section class="layout-section">
+                <div class="layout-section-inner">
+                    <h2 class="layout-section-title" data-layout-map-title>숙소 배치도</h2>
+                    <p class="layout-section-desc" data-layout-map-description></p>
+                    <div class="layout-images-grid" data-layout-map-images></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===================== QUOTE ===================== -->
+        <section class="quote-section" data-closing-section>
+            <img class="quote-bg" loading="lazy" alt="" src="" />
+            <div class="quote-content">
+                <b class="quote-title" data-closing-title></b>
+                <b class="quote-body" data-closing-description></b>
             </div>
-        </div>
+        </section>
 
-        <!-- Layout Map Content - 이미지와 설명이 교대로 나옴 -->
-        <div class="layout-map-content">
-            <!-- Layout Map Item 1 -->
-            <div class="layout-map-item animate-element">
-                <img alt="배치도" class="layout-map-image" data-layout-map-image-0>
-            </div>
+        <!-- footer.html include -->
+        <div id="footer-container"></div>
+    </div>
 
-            <!-- Layout Map Description 1 -->
-            <div class="layout-map-description-item animate-element">
-                <p data-layout-map-description-0></p>
-            </div>
-        </div>
-    </main>
+    <!-- Scripts -->
+    <script src="./js/common.js"></script>
+    <script src="./js/common/scroll-reveal.js"></script>
+    <script src="./js/pages/layout-map.js"></script>
 
-    <!-- Closing Section - Full Banner -->
-    <section class="full-banner" data-layout-map-closing>
-        <img src="" alt="마무리 섹션 이미지" data-layout-map-closing-image>
-        <div class="closing-property-name" data-closing-property-name-en></div>
-    </section>
+    <!-- Data Mapper -->
+    <script src="./js/image-helpers.js"></script>
+    <script src="./js/data-mapper/core/base-mapper.js"></script>
+    <script src="./js/data-mapper/pages/header-footer-mapper.js"></script>
+    <script src="./js/data-mapper/pages/layout-map-mapper.js"></script>
+    <script src="./js/preview-handler.js"></script>
 
-    <!-- Common JavaScript -->
-    <script src="js/common.js"></script>
-
-    <!-- Include ImageWithFallback script -->
-    <script src="js/image-with-fallback.js"></script>
-
-    <!-- Image Helpers -->
-    <script src="js/image-helpers.js"></script>
-
-    <!-- Base Data Mapper (must load before preview-handler) -->
-    <script src="js/data-mapper/core/base-mapper.js"></script>
-
-    <!-- Preview Handler for Admin Integration -->
-    <script src="js/preview-handler.js"></script>
-
-    <!-- Layout Map Mapper -->
-    <script src="js/data-mapper/pages/layout-map-mapper.js"></script>
-
-    <!-- Header Footer Mapper -->
-    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
-
-    <!-- Header and Footer Loader -->
-    <script src="js/header-footer-loader.js"></script>
-
-    <!-- Scroll Animations -->
-  <script src="js/common/scroll-animations.js"></script>
-
-    <!-- Page-specific script -->
-    <script src="js/pages/layout-map.js"></script>
-
+    <!-- Header / Footer Loader -->
+    <script src="./js/header-footer-loader.js"></script>
 </body>
 </html>
