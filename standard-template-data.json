@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.49.0",
-    "generatedAt": "2026-10-20T05:29:07.109140433Z",
+    "version": "1.50.0",
+    "generatedAt": "2026-10-20T05:30:22.589068531Z",
     "templateType": "fullpage_mood",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -1612,12 +1612,12 @@
               },
               "about": [
                 {
-                  "title": "PINES & SEA",
+                  "title": "Coaffebada Healing",
                   "images": [
                     {
                       "id": "01a157b1-5e44-7413-ba74-b91723d1c8d5",
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/main_about/1792472603577-4bibdsk0r1.jpg",
-                      "sortOrder": 0,
+                      "sortOrder": 2,
                       "description": "",
                       "isSelected": true,
                       "blockId": "13027b7b-3647-4323-af8a-dd6fbf4de20a"
@@ -1625,15 +1625,7 @@
                     {
                       "id": "01a157b1-5e27-7a45-b528-27d975924466",
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/main_about/1792472603521-is0fyah2ky.jpg",
-                      "sortOrder": 1,
-                      "description": "",
-                      "isSelected": true,
-                      "blockId": "13027b7b-3647-4323-af8a-dd6fbf4de20a"
-                    },
-                    {
-                      "id": "01a157b2-b368-7b95-9bcd-a006a1790581",
-                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/main_about/1792472691083-up8b26hp7r.jpg",
-                      "sortOrder": 2,
+                      "sortOrder": 3,
                       "description": "",
                       "isSelected": true,
                       "blockId": "13027b7b-3647-4323-af8a-dd6fbf4de20a"
@@ -1641,7 +1633,15 @@
                     {
                       "id": "01a157b2-b34f-74d1-8b58-dd8c62c8b219",
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/main_about/1792472691021-y3uker9jbk.jpg",
-                      "sortOrder": 3,
+                      "sortOrder": 4,
+                      "description": "",
+                      "isSelected": true,
+                      "blockId": "13027b7b-3647-4323-af8a-dd6fbf4de20a"
+                    },
+                    {
+                      "id": "01a157b2-b368-7b95-9bcd-a006a1790581",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/main_about/1792472691083-up8b26hp7r.jpg",
+                      "sortOrder": 5,
                       "description": "",
                       "isSelected": true,
                       "blockId": "13027b7b-3647-4323-af8a-dd6fbf4de20a"
@@ -1649,36 +1649,6 @@
                   ],
                   "blockId": "13027b7b-3647-4323-af8a-dd6fbf4de20a",
                   "description": "바다와 햇살이 머무는 포근한 공간\n창가에 앉아 풍경을 바라보고, \n함께 온 사람과 이야기를 나누며\n삼척 코아페바다펜션에서\n 편안한 휴식의 시간을 보내보세요.\n"
-                },
-                {
-                  "title": "Barbecue",
-                  "images": [
-                    {
-                      "id": "01a1527d-65ad-7c1b-9fb5-31ee5c5525ac",
-                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/main_about/1792385311366-ez0tt2g2u5.jpg",
-                      "sortOrder": 4,
-                      "description": "",
-                      "isSelected": true,
-                      "blockId": "e6598bd4-72f2-4dbd-8314-131757647a42"
-                    }
-                  ],
-                  "blockId": "e6598bd4-72f2-4dbd-8314-131757647a42",
-                  "description": "은은한 조명 아래, 맛있는 저녁"
-                },
-                {
-                  "title": "Cafe",
-                  "images": [
-                    {
-                      "id": "01a1527d-6592-7b0f-aab2-17d6fdeaf0f7",
-                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/main_about/1792385311366-nnfndliz6d.jpg",
-                      "sortOrder": 5,
-                      "description": "",
-                      "isSelected": true,
-                      "blockId": "08a1f3b3-3732-43d7-b7fe-94924a3f17a5"
-                    }
-                  ],
-                  "blockId": "08a1f3b3-3732-43d7-b7fe-94924a3f17a5",
-                  "description": "자연이 보이는 자리에 앉아 즐기는 커피 한 잔"
                 }
               ]
             }
