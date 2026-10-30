@@ -2450,6 +2450,53 @@
   object-position: left top;
 }
 
+/* 아주 좁은 폰(≤360): 타이틀 최소 32px 로는 "Specials preview" 가 칸(약 200px)을 넘어 잘린다 */
+@media screen and (max-width: 360px) {
+  .room-preview,
+  .specials-preview,
+  .local-sights {
+    font-size: 26px !important;
+  }
+}
+
+/* 모바일(≤768): con-3 미리보기(Room · Specials · 아래 섹션) 이미지는 칸 폭을 꽉 채우고
+   사진 원본 비율 그대로(자르지 않고) 보여준다. 위 Figma 칸 비율(6:7 / 1200:580)에 맞춰 자르면
+   가로 객실 사진이 왼쪽 일부만 남는다 */
+@media screen and (max-width: 768px) {
+  .main .con-3 .description-components-child,
+  .main .con-3 .description-components-inner,
+  .main .con-3 .frame-container .description-components-inner {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+  }
+  .main .con-3 .image-components {
+    width: 100% !important;
+  }
+  /* Specials preview 문구(.txt2)에만 PC용 좌우 패딩(30/20px)이 남아 있어
+     한 줄 고정 타이틀이 Room preview 보다 50px 좁은 칸에서 양옆이 잘렸다 */
+  .main .con-3 .description-components2 .frame-container .txt-container .txt2 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  /* 바깥(con-2 · img-r-parent · con-3)이 이미 좌우 여백을 주므로 섹션 안쪽 20px 은 뺀다 */
+  .main .con-3 .description-components,
+  .main .con-3 .description-components2,
+  .main .con-3 .description-components3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .main .con-3 .image-components-child,
+  .main .con-3 .frame-item,
+  .main .con-3 .description-components2 .frame-item {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+  }
+}
+
 /* con-3: 상단/하단 padding 제거 (base 164px/54px, responsive의 다른 값 포함 모두 무효화) */
 .main .con-3,
 .main .con-3:hover {
