@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.104.0",
-    "generatedAt": "2026-11-06T01:09:27.545653417Z",
+    "version": "1.105.0",
+    "generatedAt": "2026-11-06T01:18:54.582787497Z",
     "templateType": "fullpage_mood",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -2367,8 +2367,8 @@
                 "title": "바다 곁에서 여유가 더해지는 시간",
                 "images": [
                   {
-                    "id": "01a1a944-8751-736d-a810-f549400216dd",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_hero/1793841201399-2nw3y0y9nj.jpg",
+                    "id": "01a1ae6f-d751-76b2-9d04-50a5261f3bb7",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_hero/1793927927291-pbov0clmph.jpg",
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true,
