@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.108.0",
-    "generatedAt": "2026-11-06T02:00:06.330477411Z",
+    "version": "1.109.0",
+    "generatedAt": "2026-11-06T02:10:45.233714964Z",
     "templateType": "fullpage_mood",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -505,8 +505,8 @@
             "blockId": null
           },
           {
-            "id": "01a1ae7a-f48d-7e8b-94f4-58fb5d4c645a",
-            "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/06/UT287sy1WCX4.jpg",
+            "id": "01a1ae96-5cc2-783c-9175-954299b2bffb",
+            "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/06/eX5BZf2D1CWb.jpg",
             "sortOrder": 14,
             "description": "",
             "isSelected": true,
@@ -2471,8 +2471,8 @@
                     "blockId": null
                   },
                   {
-                    "id": "01a1ae95-14ce-7cbe-bd51-5230b7566348",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_hero/1793930367872-jliau0mccx.jpg",
+                    "id": "01a1ae9f-4e56-71c8-a035-b0a93d516318",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_hero/1793931037761-syg9hw5opw.jpg",
                     "sortOrder": 13,
                     "description": "",
                     "isSelected": true,
@@ -2643,8 +2643,8 @@
                 "title": " ",
                 "images": [
                   {
-                    "id": "01a1ae95-14d6-794d-aff6-924f95ae8ca8",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/main_hero/1793930367876-lokjxcehp4.jpg",
+                    "id": "01a1ae9f-4f49-7d50-8384-1d091d7a118e",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/main_hero/1793931037769-p316x0xgpw.jpg",
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true,
@@ -2937,8 +2937,8 @@
         "name": "삼척 코아페바다 오션뷰 펜션",
         "images": [
           {
-            "id": "01a1ae95-14d7-705a-a986-9f4f892f1b50",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/property_thumbnail/1793930367885-cfuj1bap0k.jpg",
+            "id": "01a1ae9f-4f48-75b7-a610-6206dc0d6c3e",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/property_thumbnail/1793931037860-0pe43vkuub.jpg",
             "sortOrder": 0,
             "description": "",
             "isSelected": true,
@@ -2946,8 +2946,8 @@
             "category": "property_thumbnail"
           },
           {
-            "id": "01a1ae95-150e-7668-bb8e-5136b349c595",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/property_exterior/1793930367887-suv6c9w3sm.jpg",
+            "id": "01a1ae9f-4e63-7b94-bc73-078b03adf4b9",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/property_exterior/1793931037772-1id0sb287k.jpg",
             "sortOrder": 0,
             "description": "",
             "isSelected": true,
