@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.110.0",
-    "generatedAt": "2026-11-06T02:12:27.875875883Z",
+    "version": "1.111.0",
+    "generatedAt": "2026-11-06T04:02:06.194222884Z",
     "templateType": "fullpage_mood",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -22,7 +22,7 @@
     "checkin": "15:00",
     "checkout": "11:00",
     "checkInOutInfo": "[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 21시 00분\n22:00 이후 입실 시 미리 연락 바랍니다.",
-    "usageGuide": "[공지사항]\n- 강원 삼척시 근덕면 용화길 27-34(굴다리 앞에서 좌측 방향) 입니다.\n- 애견 동반 금지\n- 객실내 흡연 및 화기사용(촛불,가스버너)을 금합니다.\n- 객실 내 육류, 튀김류, 생선류 조리를 할 수 없습니다\n- 보호자 동반없는 미성년자는 이용하실 수 없습니다.\n- 사용하신 식기는 간단히 세척해 주시기 바랍니다.\n- 사용하신 침구는 간단히 정리해 주시기 바랍니다.\n- 쓰레기는 지정된 장소에 분리하여 주시기 바랍니다.\n- 위의 정보는 펜션의 사정에 따라 변경될 수 있습니다.\n\n[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 21시 00분\n22:00 이후 입실 시 미리 연락 바랍니다.\n\n[인원추가정보]\n[연령기준]\n- 성인: 8세 이상\n- 아동: 24개월 이상~8세 미만\n- 유아: 24개월 미만\n\n[추가요금]\n- 결제방법: 후결제(현장결제)\n- 24개월 미만은 무료로 침구가 미제공 됩니다.\n※ 방문객 추가금 발생 :10,000원 (방문객은 현장결제만 가능)\n※ 별도침구추가 : 10,000원\n\n[개별바베큐]\n- 이용 객실: 전 객실\n- 이용 장소: 숯불은 야외 개별 바베큐장, 전기그릴은 객실 내부\n- 제공 구성: 숯, 그릴, 석쇠, 장갑(식재료는 개인 준비) / 전기그릴은 기기 대여\n- 이용 요금: 숯불 2인 20,000원, 4인 25,000원, 5~6인 30,000원, 1인 추가 시 5,000원 / 전기그릴 20,000원 (1박기준/현장결제)\n- 신청 시간: 15:00~20:00\n※ 1시간 전까지 신청\n- 준비 소요시간: 약 10분 ~ 20분\n- 이용 시간: 18:00 ~ 22:00\n※ 전기그릴은 이용시간 제한없음\n※ 야외 바베큐장 4계절 이용 가능 (하절기에는 선풍기, 동절기에는 전기열기구 제공)\n※ 우천/동계/강풍 시에는 실내 전기그릴 이용 가능\n※ 현장 날씨 상황이나 펜션 운영 사정에 따라 변동될 수 있습니다.\n\n[스파]\n- 이용 객실: 303\n- 스파 형태: 실내 개별 제트스파 / 월풀스파\n- 수용 인원: 2인 ~ 4인 (객실별 스파 욕조 크기에 따라 상이)\n- 이용 요금: 무료 \n- 신청 시간: 제한없음\n- 이용 시간: 15:00~ 22:30\n※ 야간 고소음 방지를 위해 22:30 이후 심야 사용 자제 권장\n- 온도 조절: 가능\n※ 스파 기기의 고장 방지 및 위생 관리를 위해 지정된 물 이외의 입욕제(버블바, 삼색소금 등) 사용은 엄격히 금지됩니다.\n\n[부대시설]\n[카페]\n- 1층 카페 운영\n- 24시간 셀프 무료 이용(현장 상황에 따라 이용불가 할 수 있음)\n- 체크인 안내 및 웰컴티 제공\n\n[편의 및 주변 시설]\n[편의시설]\n- 탈수기/건조대 비치\n- 객실 내 이동형 스탠바이미, 무선 청소기 보유\n- 전 객실 및 시설 내 무료 WiFi 제공\n- 넷플릭스 이용 가능\n- OTT 이용 가능\n※ 디즈니+, 티빙 등 기타 OTT 애플리케이션 지원\n※ 개인계정 필요  \n- 화재감지기: 소화기 및 단독경보형 감지기 설치\n- 일산화탄소감지기 보유\n\n[주변 관광지]\n- 용화해변 : 도보로 1분거리\n- 삼척 레일바이크 도보 : 3분 거리\n- 삼척 해상케이블카 및 장호항 : 차량으로 1~3분거리\n\n[주차장]\n- 주차장 보유\n- 이용 요금:무료\n- 주차 대수:13\n- 위치:강원 삼척시 근덕면 용화리 251-4번지 용화 해수욕장 입구 쪽",
+    "usageGuide": "- 강원 삼척시 근덕면 용화길 27-34(굴다리 앞에서 좌측 방향) 입니다.\n- 애견 동반 금지\n- 객실내 흡연 및 화기사용(촛불,가스버너)을 금합니다.\n- 객실 내 육류, 튀김류, 생선류 조리를 할 수 없습니다\n- 보호자 동반없는 미성년자는 이용하실 수 없습니다.\n- 사용하신 식기는 간단히 세척해 주시기 바랍니다.\n- 사용하신 침구는 간단히 정리해 주시기 바랍니다.\n- 쓰레기는 지정된 장소에 분리하여 주시기 바랍니다.\n- 위의 정보는 펜션의 사정에 따라 변경될 수 있습니다.\n\n[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 21시 00분\n22:00 이후 입실 시 미리 연락 바랍니다.\n\n[인원추가정보]\n[연령기준]\n- 성인: 8세 이상\n- 아동: 24개월 이상~8세 미만\n- 유아: 24개월 미만\n\n[추가 요금]\n- 전객실\n- 요금: 성인 1인 15,000원, 아동 1인 15,000원, 유아 무료\n(1박기준/현장결제)\n- 24개월 미만은 무료로 침구가 미제공 됩니다.\n※ 방문객 추가금 발생 :10,000원 (방문객은 현장결제만 가능)\n※ 별도침구추가 : 10,000원\n\n[개별바베큐]\n- 이용 객실: 전 객실\n- 이용 장소: 숯불은 야외 개별 바베큐장, 전기그릴은 객실 내부\n- 제공 구성: 숯, 그릴, 석쇠, 장갑(식재료는 개인 준비) / 전기그릴은 기기 대여\n- 이용 요금: 숯불 2인 20,000원, 4인 25,000원, 5~6인 30,000원, 1인 추가 시 5,000원 / 전기그릴 20,000원 (1박기준/현장결제)\n- 신청 시간: 15:00~20:00\n※ 1시간 전까지 신청\n- 준비 소요시간: 약 10분 ~ 20분\n- 이용 시간: 18:00 ~ 22:00\n※ 전기그릴은 이용시간 제한없음\n※ 야외 바베큐장 4계절 이용 가능 (하절기에는 선풍기, 동절기에는 전기열기구 제공)\n※ 우천/동계/강풍 시에는 실내 전기그릴 이용 가능\n※ 현장 날씨 상황이나 펜션 운영 사정에 따라 변동될 수 있습니다.\n\n[스파]\n- 이용 객실: 303\n- 스파 형태: 실내 개별 제트스파 / 월풀스파\n- 수용 인원: 2인 ~ 4인 (객실별 스파 욕조 크기에 따라 상이)\n- 이용 요금: 무료 \n- 신청 시간: 제한없음\n- 이용 시간: 15:00~ 22:30\n※ 야간 고소음 방지를 위해 22:30 이후 심야 사용 자제 권장\n- 온도 조절: 가능\n※ 스파 기기의 고장 방지 및 위생 관리를 위해 지정된 물 이외의 입욕제(버블바, 삼색소금 등) 사용은 엄격히 금지됩니다.\n\n[부대시설]\n[카페]\n- 1층 카페 운영\n- 24시간 셀프 무료 이용(현장 상황에 따라 이용불가 할 수 있음)\n- 체크인 안내 및 웰컴티 제공\n\n[편의 및 주변 시설]\n[편의시설]\n- 탈수기/건조대 비치\n- 객실 내 이동형 스탠바이미, 무선 청소기 보유\n- 전 객실 및 시설 내 무료 WiFi 제공\n- 넷플릭스 이용 가능\n- OTT 이용 가능\n※ 디즈니+, 티빙 등 기타 OTT 애플리케이션 지원\n※ 개인계정 필요  \n- 화재감지기: 소화기 및 단독경보형 감지기 설치\n- 일산화탄소감지기 보유\n\n[주변 관광지]\n- 용화해변 : 도보로 1분거리\n- 삼척 레일바이크 도보 : 3분 거리\n- 삼척 해상케이블카 및 장호항 : 차량으로 1~3분거리\n\n[주차장]\n- 주차장 보유\n- 이용 요금:무료\n- 주차 대수:13\n- 위치:강원 삼척시 근덕면 용화리 251-4번지 용화 해수욕장 입구 쪽",
     "reservationGuide": "- 강원 삼척시 근덕면 용화길 27-34(굴다리 앞에서 좌측 방향) 입니다.\n- 애견 동반 금지\n- 객실내 흡연 및 화기사용(촛불,가스버너)을 금합니다.\n- 객실 내 육류, 튀김류, 생선류 조리를 할 수 없습니다\n- 보호자 동반없는 미성년자는 이용하실 수 없습니다.\n- 사용하신 식기는 간단히 세척해 주시기 바랍니다.\n- 사용하신 침구는 간단히 정리해 주시기 바랍니다.\n- 쓰레기는 지정된 장소에 분리하여 주시기 바랍니다.\n- 위의 정보는 펜션의 사정에 따라 변경될 수 있습니다.",
     "province": "도/시",
     "city": "시/군/구",
@@ -505,8 +505,8 @@
             "blockId": null
           },
           {
-            "id": "01a1ae96-5cc2-783c-9175-954299b2bffb",
-            "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/06/eX5BZf2D1CWb.jpg",
+            "id": "01a1aeb1-d837-728d-ae17-95fcd883cda9",
+            "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/06/4aocPmnqBIsl.jpg",
             "sortOrder": 14,
             "description": "",
             "isSelected": true,
@@ -537,7 +537,7 @@
   "rooms": [
     {
       "id": "01a13ed5-addc-7f4c-9037-0680ff0ff4fe",
-      "name": "101호",
+      "name": "101호(오션뷰)",
       "description": "원룸형, 침대룸(퀸침대1)+주방1+화장실1\r\n12평\r\n욕실용품,남녀공용,TV,금연,냉장고,에어컨,전기밥솥,취사시설/도구,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,OTT,와이파이,식탁,세면도구",
       "roomInfo": "",
       "usageGuide": "",
@@ -611,7 +611,7 @@
         {
           "thumbnail": [
             {
-              "id": "01a1ae7c-c9d2-7565-9120-de3f1d9fc02d",
+              "id": "01a1af05-4046-70f2-8147-5fad8c8a2b67",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/EimpKazfR5Uw.jpg",
               "sortOrder": 1,
               "description": "",
@@ -621,7 +621,7 @@
           ],
           "interior": [
             {
-              "id": "01a1ae7c-c9d2-7bce-b339-aa67a9e25167",
+              "id": "01a1af05-4048-7fc3-bf6e-19842d05f342",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/Lpcouj0OsCq5.jpg",
               "sortOrder": 2,
               "description": "",
@@ -629,7 +629,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c9d2-7f99-9310-aa2d3fc77956",
+              "id": "01a1af05-4049-741e-8e0e-c9ec8c605530",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/X0ldy7YPCkE1.jpg",
               "sortOrder": 3,
               "description": "",
@@ -637,7 +637,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c9d3-7307-bda2-c8e0bb68ce1f",
+              "id": "01a1af05-4049-769d-9233-779177358474",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/InaRdBPlAX13.jpg",
               "sortOrder": 4,
               "description": "",
@@ -645,7 +645,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c9d3-77f4-af13-38331ea0c0c8",
+              "id": "01a1af05-4049-7c88-9d24-fc7fe957d5fb",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/IabmEd8RUOeA.jpg",
               "sortOrder": 5,
               "description": "",
@@ -653,7 +653,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c9d3-79bf-8b93-a737363722ab",
+              "id": "01a1af05-4049-7fea-994d-2f54d7431fff",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/rwHJ5j3hDMk8.jpg",
               "sortOrder": 6,
               "description": "",
@@ -661,7 +661,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c9d3-7aae-9b38-2f911761158d",
+              "id": "01a1af05-404a-72fd-a038-a5777d507872",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/82OdNSuD9Cyl.jpg",
               "sortOrder": 7,
               "description": "",
@@ -669,7 +669,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c9d3-7bc2-a561-2aaaddcd83ad",
+              "id": "01a1af05-404c-795b-b73c-80cdc93fe0e4",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/0RepEwiZW6fc.jpg",
               "sortOrder": 8,
               "description": "",
@@ -677,7 +677,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c9d4-75d7-83f7-88750c6df617",
+              "id": "01a1af05-404d-70d3-a7d8-911c0004f2be",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/MuagB4LfiPJF.jpg",
               "sortOrder": 9,
               "description": "",
@@ -685,7 +685,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c9d4-76f5-8d09-3febaafbced5",
+              "id": "01a1af05-404d-7284-a9e9-e57c315d2922",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/X06Arym9cftC.jpg",
               "sortOrder": 10,
               "description": "",
@@ -693,7 +693,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c9d7-7624-b0e3-95c0a3e64a78",
+              "id": "01a1af05-404d-78a0-9046-3aed630a6271",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/ieTjFXyuK7mf.jpg",
               "sortOrder": 11,
               "description": "",
@@ -708,7 +708,7 @@
     },
     {
       "id": "01a13ed5-ae35-734b-9b46-ed92331f52aa",
-      "name": "102호",
+      "name": "102호(오션뷰)",
       "description": "원룸형, 침대룸(퀸침대1)+주방1+화장실1\r\n12평\r\n욕실용품,남녀공용,TV,금연,냉장고,에어컨,전기밥솥,취사시설/도구,드라이기,전자레인지,인덕션,일산화탄소 감지기,화재 감지기,소화기,OTT,와이파이,식탁,세면도구",
       "roomInfo": "",
       "usageGuide": "",
@@ -782,7 +782,7 @@
         {
           "thumbnail": [
             {
-              "id": "01a1ae7c-c4a9-7a7a-8199-aac6d204a064",
+              "id": "01a1af05-3cfc-7e39-8f81-f36275fe29f0",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/X0DdmUAyWRqF.jpg",
               "sortOrder": 1,
               "description": "",
@@ -792,7 +792,7 @@
           ],
           "interior": [
             {
-              "id": "01a1ae7c-c4aa-74ef-8abd-ae7a97951925",
+              "id": "01a1af05-3cfd-76f0-88d6-08b0e24cf858",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/Pn5rF8mS7vpL.jpg",
               "sortOrder": 2,
               "description": "",
@@ -800,7 +800,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4aa-7628-8f54-cc0ab84a2c96",
+              "id": "01a1af05-3d02-77c9-9bce-869a5723a6d1",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/mFolpvgZdGPE.jpg",
               "sortOrder": 3,
               "description": "",
@@ -808,7 +808,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4aa-7986-a14c-19b310cdd945",
+              "id": "01a1af05-3d03-7308-880d-31cb597adc48",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/zPyeJB8nS4Rv.jpg",
               "sortOrder": 4,
               "description": "",
@@ -816,7 +816,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4aa-7ae1-8140-6ae534598670",
+              "id": "01a1af05-3d03-79a9-993a-3d542f219d07",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/NgDVqnhxr0jE.jpg",
               "sortOrder": 5,
               "description": "",
@@ -824,7 +824,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4aa-7be3-8ac4-66a57800aa92",
+              "id": "01a1af05-3d03-7d04-9aea-3566409ca140",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/t3VX6dEf2j4N.jpg",
               "sortOrder": 6,
               "description": "",
@@ -832,7 +832,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4aa-7d41-b35e-b50d7917fbef",
+              "id": "01a1af05-3d03-7e77-bb06-afc8a5a48db0",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/sBp0LztV1mNG.jpg",
               "sortOrder": 7,
               "description": "",
@@ -840,7 +840,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4aa-7ffc-a5d4-d3cb4fe2bddb",
+              "id": "01a1af05-3d04-7b3d-8a6e-11fd6bd72f95",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/kWaQIcZfwEBx.jpg",
               "sortOrder": 8,
               "description": "",
@@ -848,7 +848,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4ab-707d-a192-f1590ae03c76",
+              "id": "01a1af05-3d04-7cc8-80d6-06d25aa90e06",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/UKuqNHo540Br.jpg",
               "sortOrder": 9,
               "description": "",
@@ -856,7 +856,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4ab-7335-94e3-ccbbff0f177d",
+              "id": "01a1af05-3d05-719a-a1c3-18de288318e1",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/1MX8fvLUGSwj.jpg",
               "sortOrder": 10,
               "description": "",
@@ -864,7 +864,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4ab-7387-85c2-df56a12d3b2d",
+              "id": "01a1af05-3d05-731f-8939-aa3cd6191c83",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/lv52u4POqVyQ.jpg",
               "sortOrder": 11,
               "description": "",
@@ -872,7 +872,7 @@
               "blockId": null
             },
             {
-              "id": "01a1ae7c-c4ab-753b-9692-81c09d72e89f",
+              "id": "01a1af05-3d05-7777-aabf-316cc521f7ba",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/11/02/C2BGYTRciXvy.jpg",
               "sortOrder": 12,
               "description": "",
