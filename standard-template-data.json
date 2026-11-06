@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.100.0",
-    "generatedAt": "2026-11-06T00:41:41.872978879Z",
+    "version": "1.101.0",
+    "generatedAt": "2026-11-06T00:45:46.115986541Z",
     "templateType": "fullpage_mood",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -2471,8 +2471,8 @@
                     "blockId": null
                   },
                   {
-                    "id": "01a1ae4d-2ce1-7d86-99e5-ab55a9c743c5",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_hero/1793925655376-o2ynpxwnqq.jpg",
+                    "id": "01a1ae51-7f96-7bea-b890-8ed951bb258e",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_hero/1793925938785-lr1gcgzgjb.jpg",
                     "sortOrder": 13,
                     "description": "",
                     "isSelected": true,
@@ -2527,8 +2527,8 @@
                     "blockId": null
                   },
                   {
-                    "id": "01a167f2-74ce-7704-8dd8-aab3fcba2e47",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_essence/1792745303689-0m77yfxljj.jpg",
+                    "id": "01a1ae51-7f97-7785-ba42-47702106200f",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/index_essence/1793925938732-jfr25xiqxn.jpg",
                     "sortOrder": 1,
                     "description": "",
                     "isSelected": true,
@@ -2937,8 +2937,8 @@
         "name": "삼척 코아페바다 오션뷰 펜션",
         "images": [
           {
-            "id": "01a1ae4d-2ce5-76a6-a8a8-6b9461164a59",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/property_thumbnail/1793925655381-zjxmx48mk0.jpg",
+            "id": "01a1ae51-7fdb-7d83-95fc-4f6179e42037",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/property_thumbnail/1793925938731-k7ibv39cc8.jpg",
             "sortOrder": 0,
             "description": "",
             "isSelected": true,
@@ -2946,8 +2946,8 @@
             "category": "property_thumbnail"
           },
           {
-            "id": "01a1ae4d-2c68-7426-b0de-813a3bf754fb",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/property_exterior/1793925655382-bywdeag8g2.jpg",
+            "id": "01a1ae51-7fbd-70b6-bdda-476720bf3005",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/01a14344-3053-70cf-9c85-2c515b9b49d3/property_exterior/1793925938787-86rxtyk9r7.jpg",
             "sortOrder": 0,
             "description": "",
             "isSelected": true,
