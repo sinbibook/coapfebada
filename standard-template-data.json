@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.121.0",
-    "generatedAt": "2026-11-10T05:01:20.740933248Z",
+    "version": "1.122.0",
+    "generatedAt": "2026-11-10T06:37:05.551126498Z",
     "templateType": "fullpage_mood",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -22,12 +22,12 @@
     "checkin": "15:00",
     "checkout": "11:00",
     "checkInOutInfo": "[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 21시 00분\n22:00 이후 입실 시 미리 연락 바랍니다.",
-    "usageGuide": "[공지사항]\n- 강원 삼척시 근덕면 용화길 27-34(굴다리 앞에서 좌측 방향) 입니다.\n- 애견 동반 금지\n- 객실내 흡연 및 화기사용(촛불,가스버너)을 금합니다.\n- 객실 내 육류, 튀김류, 생선류 조리를 할 수 없습니다\n- 보호자 동반없는 미성년자는 이용하실 수 없습니다.\n- 사용하신 식기는 간단히 세척해 주시기 바랍니다.\n- 사용하신 침구는 간단히 정리해 주시기 바랍니다.\n- 쓰레기는 지정된 장소에 분리하여 주시기 바랍니다.\n- 위의 정보는 펜션의 사정에 따라 변경될 수 있습니다.\n\n[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 21시 00분\n22:00 이후 입실 시 미리 연락 바랍니다.\n\n[인원추가정보]\n[연령기준]\n- 성인: 8세 이상\n- 아동: 24개월 이상~8세 미만\n- 유아: 24개월 미만\n\n[추가요금]\n- 결제방법: 후결제(현장결제)\n※ 24개월 미만은 무료로 침구가 미제공 됩니다.\n※ 방문객 추가금 발생 :10,000원 (방문객은 현장결제만 가능)\n※ 별도침구추가 : 10,000원\n\n[개별바베큐]\n- 이용 객실: 전 객실\n- 이용 장소: 숯불은 야외 개별 바베큐장, 전기그릴은 객실 내부\n- 제공 구성: 숯, 그릴, 석쇠, 장갑(식재료는 개인 준비) / 전기그릴은 기기 대여\n- 이용 요금: 숯불 2인 20,000원, 4인 25,000원, 5~6인 30,000원, 1인 추가 시 5,000원 / 전기그릴 20,000원 (1박기준/현장결제)\n- 신청 시간: 15:00~20:00\n※ 1시간 전까지 신청\n- 준비 소요시간: 약 10분 ~ 20분\n- 이용 시간: 18:00 ~ 22:00\n※ 전기그릴은 이용시간 제한없음\n※ 야외 바베큐장 4계절 이용 가능 (하절기에는 선풍기, 동절기에는 전기열기구 제공)\n※ 우천/동계/강풍 시에는 실내 전기그릴 이용 가능\n※ 현장 날씨 상황이나 펜션 운영 사정에 따라 변동될 수 있습니다.\n\n[스파]\n- 이용 객실: 303\n- 스파 형태: 실내 개별 제트스파 / 월풀스파\n- 수용 인원: 2인 ~ 4인 (객실별 스파 욕조 크기에 따라 상이)\n- 이용 요금: 무료 \n- 신청 시간: 제한없음\n- 이용 시간: 15:00~ 22:30\n※ 야간 고소음 방지를 위해 22:30 이후 심야 사용 자제 권장\n- 온도 조절: 가능\n※ 스파 기기의 고장 방지 및 위생 관리를 위해 지정된 물 이외의 입욕제(버블바, 삼색소금 등) 사용은 엄격히 금지됩니다.\n\n[부대시설]\n[카페]\n- 1층 카페 운영\n- 24시간 셀프 무료 이용(현장 상황에 따라 이용불가 할 수 있음)\n- 체크인 안내 및 웰컴티 제공\n\n[편의 및 주변 시설]\n[편의시설]\n- 탈수기/건조대 비치\n- 객실 내 이동형 스탠바이미, 무선 청소기 보유\n- 전 객실 및 시설 내 무료 WiFi 제공\n- 넷플릭스 이용 가능\n- OTT 이용 가능\n※ 디즈니+, 티빙 등 기타 OTT 애플리케이션 지원\n※ 개인계정 필요  \n- 화재감지기: 소화기 및 단독경보형 감지기 설치\n- 일산화탄소감지기 보유\n\n[주변 관광지]\n- 용화해변 : 도보로 1분거리\n- 삼척 레일바이크 도보 : 3분 거리\n- 삼척 해상케이블카 및 장호항 : 차량으로 1~3분거리\n\n[주차장]\n- 주차장 보유\n- 이용 요금:무료\n- 주차 대수:13\n- 위치:강원 삼척시 근덕면 용화리 251-4번지 용화 해수욕장 입구 쪽",
+    "usageGuide": "- 강원 삼척시 근덕면 용화길 27-34(굴다리 앞에서 좌측 방향) 입니다.\n- 애견 동반 금지\n- 객실내 흡연 및 화기사용(촛불,가스버너)을 금합니다.\n- 객실 내 육류, 튀김류, 생선류 조리를 할 수 없습니다\n- 보호자 동반없는 미성년자는 이용하실 수 없습니다.\n- 사용하신 식기는 간단히 세척해 주시기 바랍니다.\n- 사용하신 침구는 간단히 정리해 주시기 바랍니다.\n- 쓰레기는 지정된 장소에 분리하여 주시기 바랍니다.\n- 위의 정보는 펜션의 사정에 따라 변경될 수 있습니다.\n\n[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 21시 00분\n22:00 이후 입실 시 미리 연락 바랍니다.\n\n[인원추가정보]\n[연령기준]\n- 성인: 8세 이상\n- 아동: 24개월 이상~8세 미만\n- 유아: 24개월 미만\n\n[추가 요금]\n- 전객실\n- 요금: 성인 1인 15,000원, 아동 1인 15,000원, 유아 무료\n(1박기준/현장결제)\n※ 24개월 미만은 무료로 침구가 미제공 됩니다.\n※ 방문객 추가금 발생 :10,000원 (방문객은 현장결제만 가능)\n※ 별도침구추가 : 10,000원\n\n[개별바베큐]\n- 이용 객실: 전 객실\n- 이용 장소: 숯불은 야외 개별 바베큐장, 전기그릴은 객실 내부\n- 제공 구성: 숯, 그릴, 석쇠, 장갑(식재료는 개인 준비) / 전기그릴은 기기 대여\n- 이용 요금: 숯불 2인 20,000원, 4인 25,000원, 5~6인 30,000원, 1인 추가 시 5,000원 / 전기그릴 20,000원 (1박기준/현장결제)\n- 신청 시간: 15:00~20:00\n※ 1시간 전까지 신청\n- 준비 소요시간: 약 10분 ~ 20분\n- 이용 시간: 18:00 ~ 22:00\n※ 전기그릴은 이용시간 제한없음\n※ 야외 바베큐장 4계절 이용 가능 (하절기에는 선풍기, 동절기에는 전기열기구 제공)\n※ 우천/동계/강풍 시에는 실내 전기그릴 이용 가능\n※ 현장 날씨 상황이나 펜션 운영 사정에 따라 변동될 수 있습니다.\n\n[스파]\n- 이용 객실: 303\n- 스파 형태: 실내 개별 제트스파 / 월풀스파\n- 수용 인원: 2인 ~ 4인 (객실별 스파 욕조 크기에 따라 상이)\n- 이용 요금: 무료 \n- 신청 시간: 제한없음\n- 이용 시간: 15:00~ 22:30\n※ 야간 고소음 방지를 위해 22:30 이후 심야 사용 자제 권장\n- 온도 조절: 가능\n※ 스파 기기의 고장 방지 및 위생 관리를 위해 지정된 물 이외의 입욕제(버블바, 삼색소금 등) 사용은 엄격히 금지됩니다.\n\n[부대시설]\n[카페]\n- 1층 카페 운영\n- 24시간 셀프 무료 이용(현장 상황에 따라 이용불가 할 수 있음)\n- 체크인 안내 및 웰컴티 제공\n\n[편의 및 주변 시설]\n[편의시설]\n- 탈수기/건조대 비치\n- 객실 내 이동형 스탠바이미, 무선 청소기 보유\n- 전 객실 및 시설 내 무료 WiFi 제공\n- 넷플릭스 이용 가능\n- OTT 이용 가능\n※ 디즈니+, 티빙 등 기타 OTT 애플리케이션 지원\n※ 개인계정 필요  \n- 화재감지기: 소화기 및 단독경보형 감지기 설치\n- 일산화탄소감지기 보유\n\n[주변 관광지]\n- 용화해변 : 도보로 1분거리\n- 삼척 레일바이크 도보 : 3분 거리\n- 삼척 해상케이블카 및 장호항 : 차량으로 1~3분거리\n\n[주차장]\n- 주차장 보유\n- 이용 요금:무료\n- 주차 대수:13\n- 위치:강원 삼척시 근덕면 용화리 251-4번지 용화 해수욕장 입구 쪽",
     "reservationGuide": "- 강원 삼척시 근덕면 용화길 27-34(굴다리 앞에서 좌측 방향) 입니다.\n- 애견 동반 금지\n- 객실내 흡연 및 화기사용(촛불,가스버너)을 금합니다.\n- 객실 내 육류, 튀김류, 생선류 조리를 할 수 없습니다\n- 보호자 동반없는 미성년자는 이용하실 수 없습니다.\n- 사용하신 식기는 간단히 세척해 주시기 바랍니다.\n- 사용하신 침구는 간단히 정리해 주시기 바랍니다.\n- 쓰레기는 지정된 장소에 분리하여 주시기 바랍니다.\n- 위의 정보는 펜션의 사정에 따라 변경될 수 있습니다.",
     "province": "도/시",
     "city": "시/군/구",
     "domain": "coapfebada.kr",
-    "realtimeBookingId": "https://www.bookingplay.co.kr/booking/1/13358",
+    "realtimeBookingId": "https://booking.naver.com/booking/3/bizes/1770408",
     "ybsId": "33271",
     "tripPropertyId": "13358",
     "partnerType": "distributor_b",
@@ -402,7 +402,7 @@
           {
             "id": "01a1aeb1-d837-728d-ae17-95fcd883cda9",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/06/4aocPmnqBIsl.jpg",
-            "sortOrder": 1,
+            "sortOrder": 0,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -412,7 +412,7 @@
           {
             "id": "01a1ae7a-f48c-7d04-b76e-6b9b6485c954",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/06/Vpe4szChFy6l.jpg",
-            "sortOrder": 2,
+            "sortOrder": 0,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -420,7 +420,7 @@
           {
             "id": "01a1a954-90dd-7450-9da1-a01f984c54ce",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/GzL5QrS4esfW.jpg",
-            "sortOrder": 3,
+            "sortOrder": 1,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -428,7 +428,7 @@
           {
             "id": "01a1a954-90dc-7fc7-8fd9-156b6e773dfa",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/YtmPOa2q5EwN.jpg",
-            "sortOrder": 4,
+            "sortOrder": 2,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -436,7 +436,7 @@
           {
             "id": "01a1a954-90dd-7925-b1dd-4abe010c2a9d",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/x162vpoXUTMN.jpg",
-            "sortOrder": 5,
+            "sortOrder": 3,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -444,7 +444,7 @@
           {
             "id": "01a1a954-90dd-7c8e-9525-5803ec21e966",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/EqelhzdYSaFg.jpg",
-            "sortOrder": 6,
+            "sortOrder": 4,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -452,7 +452,7 @@
           {
             "id": "01a1a954-90de-716b-a19c-86daa44bd079",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/vPESc8YLnq73.jpg",
-            "sortOrder": 7,
+            "sortOrder": 5,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -460,7 +460,7 @@
           {
             "id": "01a1a954-90de-7791-b5ba-2cbffe15e394",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/WCXL8KMwr5ID.jpg",
-            "sortOrder": 8,
+            "sortOrder": 6,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -468,7 +468,7 @@
           {
             "id": "01a1a954-90de-7996-b5c6-fd657c693c79",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/u1P7IBhQVeAq.jpg",
-            "sortOrder": 9,
+            "sortOrder": 7,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -476,7 +476,7 @@
           {
             "id": "01a1a954-90de-7d17-b0c0-f98fbe509d4b",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/lwkjd1EH4u8A.jpg",
-            "sortOrder": 10,
+            "sortOrder": 8,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -484,7 +484,7 @@
           {
             "id": "01a1a954-90df-7880-98f4-80b5717fe4ce",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/lDMPmdzwutI7.jpg",
-            "sortOrder": 11,
+            "sortOrder": 9,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -492,7 +492,7 @@
           {
             "id": "01a1a954-90df-7a80-9e37-abe96040fea8",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/KTaOfzHJXIQ4.jpg",
-            "sortOrder": 12,
+            "sortOrder": 10,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -500,7 +500,7 @@
           {
             "id": "01a1a954-90e0-71be-ad88-b420ed76c817",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/2yAENhs5xzYF.jpg",
-            "sortOrder": 13,
+            "sortOrder": 11,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -508,7 +508,7 @@
           {
             "id": "01a1a954-90e0-7375-b616-c84095d6765e",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/03nOMRg127mk.jpg",
-            "sortOrder": 14,
+            "sortOrder": 12,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -516,7 +516,7 @@
           {
             "id": "01a1a954-90e1-73e8-89d6-4221d6090f86",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/FI0er6l3XEhJ.jpg",
-            "sortOrder": 15,
+            "sortOrder": 13,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -524,7 +524,7 @@
           {
             "id": "01a1a954-90e1-7b09-9de4-e6eb2e5bfcf9",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/11/05/tsY83urA6EeC.jpg",
-            "sortOrder": 16,
+            "sortOrder": 14,
             "description": "",
             "isSelected": true,
             "blockId": null
