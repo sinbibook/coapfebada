@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.120.0",
-    "generatedAt": "2026-11-10T00:26:42.828344232Z",
+    "version": "1.121.0",
+    "generatedAt": "2026-11-10T05:01:20.740933248Z",
     "templateType": "fullpage_mood",
     "propertyId": "01a0ad18-7a91-7894-b237-664633ea7991",
     "homepageId": "01a14344-3053-70cf-9c85-2c515b9b49d3"
@@ -28,7 +28,7 @@
     "city": "시/군/구",
     "domain": "coapfebada.kr",
     "realtimeBookingId": "https://www.bookingplay.co.kr/booking/1/13358",
-    "ybsId": "",
+    "ybsId": "33271",
     "tripPropertyId": "13358",
     "partnerType": "distributor_b",
     "tripProviderName": "(주)신비서",
@@ -4631,7 +4631,8 @@
         }
       ],
       "footer": {
-        "ruralStayMark": null
+        "ruralStayMark": null,
+        "ruralStayMarks": [ ]
       }
     }
   }
